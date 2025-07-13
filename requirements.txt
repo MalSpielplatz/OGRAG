@@ -1,0 +1,7 @@
+streamlit
+openai
+langchain
+langchain-openai
+rdflib
+faiss-cpu
+python-dotenv

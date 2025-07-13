@@ -1,0 +1,833 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4/"
+     xml:base="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:untitled-ontology-4="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#memilikiBentuk -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#memilikiBentuk">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#memilikiEfekSamping -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#memilikiEfekSamping">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Obat"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#EfekSamping"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#memilikiKandunganAktif -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#memilikiKandunganAktif">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Merk"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Generik"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#memilikiKategori -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#memilikiKategori">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Obat"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Kategori"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#memilikiPengobatan -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#memilikiPengobatan">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#obatPenyakit"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Penyakit"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Obat"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#obatPenyakit -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#obatPenyakit">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Obat"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Penyakit"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Deskripsi -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Deskripsi">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#EfekSamping -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#EfekSamping">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#BentukObat -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#BentukObat"/>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#EfekSamping -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#EfekSamping"/>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Generik -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Generik">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Obat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Kategori -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Kategori"/>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Merk -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Merk">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Obat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Obat -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Obat"/>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Penyakit -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Penyakit"/>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Penyakit_Tropis -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Penyakit_Tropis">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Penyakit"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Analgesik -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Analgesik">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Kategori"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Antasida -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Antasida"/>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Antibiotik -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Antibiotik">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Kategori"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Antibiotik_tetracycline -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Antibiotik_tetracycline">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Kategori"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Antimalaria -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Antimalaria">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Kategori"/>
+        <untitled-ontology-4:Deskripsi>Antimalaria adalah kelompok obat untuk mengobati dan mencegah malaria. Malaria adalah penyakit infeksi yang disebabkan oleh parasit Plasmodium dan menular melalui gigitan nyamuk Anopheles.
+
+Antimalaria bekerja dengan cara membunuh parasit yang ada di hati atau sel darah merah. Agar lebih efektif, biasanya penderita malaria akan mengonsumsi lebih dari satu jenis obat antimalaria. Hal ini karena satu obat saja tidak dapat mengatasi parasit secara tuntas.</untitled-ontology-4:Deskripsi>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Antiparasit -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Antiparasit">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Kategori"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Antipiretik -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Antipiretik">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Kategori"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Artesun -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Artesun">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Merk"/>
+        <untitled-ontology-4:memilikiBentuk rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Suntik"/>
+        <untitled-ontology-4:memilikiKandunganAktif rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Artesunate"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Artesunate -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Artesunate">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Generik"/>
+        <untitled-ontology-4:memilikiBentuk rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Suntik"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Diare"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Mual"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Pusing"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sakit_perut"/>
+        <untitled-ontology-4:memilikiKategori rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Antimalaria"/>
+        <untitled-ontology-4:obatPenyakit rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Malaria"/>
+        <untitled-ontology-4:Deskripsi>Mengobati malaria berat</untitled-ontology-4:Deskripsi>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Batuk -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Batuk">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#EfekSamping"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Penyakit"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#D-Artepp -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#D-Artepp">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Merk"/>
+        <untitled-ontology-4:memilikiBentuk rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Tablet"/>
+        <untitled-ontology-4:memilikiKandunganAktif rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Dihydroartemisinin-Piperaquine"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Demam -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Demam">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Penyakit"/>
+        <untitled-ontology-4:memilikiPengobatan rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Paracetamol"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Diare -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Diare">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#EfekSamping"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Dihydroartemisinin-Piperaquine -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Dihydroartemisinin-Piperaquine">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Generik"/>
+        <untitled-ontology-4:memilikiBentuk rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Tablet"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Batuk"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Diare"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Hilang_selera_makan"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Mual"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Mudah_lelah"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Pilek"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Pucat"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sakit_kepala"/>
+        <untitled-ontology-4:memilikiKategori rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Antimalaria"/>
+        <untitled-ontology-4:obatPenyakit rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Malaria"/>
+        <untitled-ontology-4:Deskripsi>Mengobati malaria</untitled-ontology-4:Deskripsi>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Dohixat -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Dohixat">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Merk"/>
+        <untitled-ontology-4:memilikiKandunganAktif rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Doxycycline"/>
+        <untitled-ontology-4:memilikiKategori rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Kapsul"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Doxycycline -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Doxycycline">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Generik"/>
+        <untitled-ontology-4:memilikiBentuk rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Antibiotik"/>
+        <untitled-ontology-4:memilikiBentuk rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Kapsul"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Diare"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Hilang_selera_makan"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Mual"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sakit_perut"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sunburn"/>
+        <untitled-ontology-4:memilikiKategori rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Antibiotik_tetracycline"/>
+        <untitled-ontology-4:obatPenyakit rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Malaria"/>
+        <untitled-ontology-4:Deskripsi>Mengatasi berbagai penyakit akibat infeksi bakteri, termasuk mengobati jerawat yang parah
+Mencegah terjadinya malaria pada orang yang hendak berpergian atau menetap di daerah rawan malaria</untitled-ontology-4:Deskripsi>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Feses_berwarna_seperti_tanah_liat -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Feses_berwarna_seperti_tanah_liat">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#EfekSamping"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Hilang_selera_makan -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Hilang_selera_makan">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#EfekSamping"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Insomnia -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Insomnia">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#EfekSamping"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Penyakit"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Interdoxin -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Interdoxin">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Merk"/>
+        <untitled-ontology-4:memilikiBentuk rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Kapsul"/>
+        <untitled-ontology-4:memilikiKandunganAktif rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Doxycycline"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Kapsul -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Kapsul">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#BentukObat"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Keputihan -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Keputihan">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#EfekSamping"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Penyakit"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Keringat_berlebihan -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Keringat_berlebihan">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#EfekSamping"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Kina -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Kina">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Generik"/>
+        <untitled-ontology-4:memilikiBentuk rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Suntik"/>
+        <untitled-ontology-4:memilikiBentuk rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Tablet"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Mual"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Pendengaran_berkurang"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Penglihatan_buram"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Pusing"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sakit_kepala"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Telinga_berdenging"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Wajah_memerah"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Wajah_panas"/>
+        <untitled-ontology-4:memilikiKategori rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Antimalaria"/>
+        <untitled-ontology-4:Deskripsi>Dapat mengobati malaria</untitled-ontology-4:Deskripsi>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Klorokuin -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Klorokuin">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Generik"/>
+        <untitled-ontology-4:memilikiBentuk rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Kapsul"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Diare"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Kram_perut"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Mual"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sakit_kepala"/>
+        <untitled-ontology-4:memilikiKategori rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Antimalaria"/>
+        <untitled-ontology-4:obatPenyakit rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Malaria"/>
+        <untitled-ontology-4:Deskripsi>Mencegah dan mengatasi malaria, mengatasi amebiasis yang menyebar ke liver, rheumatoid arthritis, dan lupus</untitled-ontology-4:Deskripsi>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Kram_perut -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Kram_perut">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#EfekSamping"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Malaria -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Malaria">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Penyakit"/>
+        <untitled-ontology-4:memilikiPengobatan rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Doxycycline"/>
+        <untitled-ontology-4:memilikiPengobatan rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Kina"/>
+        <untitled-ontology-4:memilikiPengobatan rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Klorokuin"/>
+        <untitled-ontology-4:memilikiPengobatan rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Pyrimethamine"/>
+        <untitled-ontology-4:Deskripsi>Malaria adalah penyakit infeksi yang disebabkan oleh parasit Plasmodium dan menular melalui gigitan nyamuk Anopheles.</untitled-ontology-4:Deskripsi>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Memar -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Memar">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#EfekSamping"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Mual -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Mual">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#EfekSamping"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Mudah_lelah -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Mudah_lelah">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#EfekSamping"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Muntah -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Muntah">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#EfekSamping"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Paracetamol -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Paracetamol">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Generik"/>
+        <untitled-ontology-4:memilikiBentuk rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sirop"/>
+        <untitled-ontology-4:memilikiBentuk rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Tablet"/>
+        <untitled-ontology-4:memilikiBentuk rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Tetes"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Feses_berwarna_seperti_tanah_liat"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Insomnia"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Memar"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Mual"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Penyakit_kuning"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sakit_kepala"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Urine_berwarna_gelap"/>
+        <untitled-ontology-4:memilikiKategori rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Analgesik"/>
+        <untitled-ontology-4:memilikiKategori rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Antipiretik"/>
+        <untitled-ontology-4:obatPenyakit rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Demam"/>
+        <untitled-ontology-4:Deskripsi>Meredakan demam dan nyeri</untitled-ontology-4:Deskripsi>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Pendengaran_berkurang -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Pendengaran_berkurang">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#EfekSamping"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Penglihatan_buram -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Penglihatan_buram">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#EfekSamping"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Penisilin -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Penisilin">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Generik"/>
+        <untitled-ontology-4:memilikiBentuk rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Kapsul"/>
+        <untitled-ontology-4:memilikiBentuk rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Suntik"/>
+        <untitled-ontology-4:memilikiBentuk rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Tablet"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Diare"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Keputihan"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Mual"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sakit_kepala"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sakit_perut"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sariawan"/>
+        <untitled-ontology-4:memilikiKategori rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Antibiotik"/>
+        <untitled-ontology-4:Deskripsi>Mengatasi infeksi bakteri</untitled-ontology-4:Deskripsi>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Penyakit_kuning -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Penyakit_kuning">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#EfekSamping"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Penyakit"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Perubahan_rasa_di_lidah -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Perubahan_rasa_di_lidah">
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Perubahan_rasa_di_lidah"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Pilek -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Pilek">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#EfekSamping"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Penyakit"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Primaquine -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Primaquine">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Generik"/>
+        <untitled-ontology-4:memilikiBentuk rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Tablet"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Kram_perut"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Mual"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Pusing"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sakit_perut"/>
+        <untitled-ontology-4:memilikiKategori rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Antimalaria"/>
+        <untitled-ontology-4:obatPenyakit rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Malaria"/>
+        <untitled-ontology-4:Deskripsi>Mencegah dan mengobati malaria</untitled-ontology-4:Deskripsi>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Primaquine_Phosphate -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Primaquine_Phosphate">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Merk"/>
+        <untitled-ontology-4:memilikiBentuk rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Tablet"/>
+        <untitled-ontology-4:memilikiKandunganAktif rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Primaquine"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Primet -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Primet">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Merk"/>
+        <untitled-ontology-4:memilikiBentuk rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Primet"/>
+        <untitled-ontology-4:memilikiKandunganAktif rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Pyrimethamine"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Pucat -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Pucat">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#EfekSamping"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Pushrob -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Pushrob">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Merk"/>
+        <untitled-ontology-4:memilikiBentuk rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Kapsul"/>
+        <untitled-ontology-4:memilikiKandunganAktif rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Doxycycline"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Pusing -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Pusing">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#EfekSamping"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Penyakit"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Pyrimethamine -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Pyrimethamine">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Generik"/>
+        <untitled-ontology-4:memilikiBentuk rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Tablet"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Diare"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Hilang_selera_makan"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Mual"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sakit_perut"/>
+        <untitled-ontology-4:memilikiKategori rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Antimalaria"/>
+        <untitled-ontology-4:memilikiKategori rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Antiparasit"/>
+        <untitled-ontology-4:obatPenyakit rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Malaria"/>
+        <untitled-ontology-4:Deskripsi>Mengobati toksoplasmosis atau mencegah dan mengobati malaria</untitled-ontology-4:Deskripsi>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sakit_kepala -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sakit_kepala">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#EfekSamping"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Penyakit"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sakit_perut -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sakit_perut">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#EfekSamping"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Penyakit"/>
+        <untitled-ontology-4:Deskripsi>Sakit perut adalah rasa sakit atau nyeri yang muncul di perut, yaitu area di bagian depan tubuh antara tulang iga dan tulang panggul. Seseorang yang mengalami sakit perut dapat merasakan kram, mulas, atau sensasi seperti tertusuk di perut.</untitled-ontology-4:Deskripsi>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sanmol -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sanmol">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Merk"/>
+        <untitled-ontology-4:memilikiBentuk rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sirop"/>
+        <untitled-ontology-4:memilikiBentuk rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Tablet"/>
+        <untitled-ontology-4:memilikiBentuk rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Tetes"/>
+        <untitled-ontology-4:memilikiKandunganAktif rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Paracetamol"/>
+        <untitled-ontology-4:Deskripsi>Sanmol adalah obat yang digunakan untuk meredakan demam serta nyeri. Rasa sakit yang bisa diatasi dengan obat ini meliputi sakit kepala, sakit gigi, atau nyeri sesudah operasi. Sanmol tersedia dalam bentuk tablet, sirop, drops (tetes), dan infus.
+
+Sanmol mengandung bahan aktif paracetamol yang memiliki efek analgesik dan antipiretik. Paracetamol dapat bekerja langsung pada pusat pengaturan rasa sakit di otak untuk meredakan nyeri. Obat ini juga mampu memengaruhi sinyal kimia di bagian otak yang mengatur suhu tubuh sehingga demam bisa membaik.</untitled-ontology-4:Deskripsi>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sariawan -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sariawan">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#EfekSamping"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Penyakit"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sariawan"/>
+        <untitled-ontology-4:Deskripsi>Sariawan atau stomatitis aphtosa adalah luka atau peradangan di bibir dan di dalam mulut. Luka ini dapat menimbulkan rasa sakit dan tidak nyaman. Meski sering dianggap sepele, sariawan dapat terasa mengganggu saat penderitanya sedang makan, minum, atau bicara.</untitled-ontology-4:Deskripsi>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Siclidon -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Siclidon">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Merk"/>
+        <untitled-ontology-4:memilikiBentuk rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Kapsul"/>
+        <untitled-ontology-4:memilikiKandunganAktif rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Doxycycline"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sirop -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sirop">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Kategori"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sunburn -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sunburn">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#EfekSamping"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Penyakit"/>
+        <untitled-ontology-4:Deskripsi>Sunburn adalah kondisi iritasi pada kulit akibat paparan berlebihan dari sinar ultraviolet (UV), baik dari matahari maupun dari lampu UV. Gejala sunburn biasanya berupa kemerahan, nyeri, dan rasa panas di kulit yang terkena sinar UV.
+
+Seperti luka bakar, tingkat keparahan sunburn juga bervariasi, mulai ringan hingga berat. Sunburn ringan dapat diobati dengan penanganan mandiri dan bisa membaik dalam 7 hari. Sedangkan sunburn yang berat jarang terjadi, tetapi tergolong kondisi serius yang sama bahayanya dengan luka bakar akibat api atau zat kimia.</untitled-ontology-4:Deskripsi>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Suntik -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Suntik">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#BentukObat"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Tablet -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Tablet">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#BentukObat"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Tablet_Kina -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Tablet_Kina">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Merk"/>
+        <untitled-ontology-4:memilikiBentuk rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Tablet"/>
+        <untitled-ontology-4:memilikiKandunganAktif rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Kina"/>
+        <untitled-ontology-4:obatPenyakit rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Malaria"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Telinga_berdenging -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Telinga_berdenging">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#EfekSamping"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Termorex -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Termorex">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Merk"/>
+        <untitled-ontology-4:memilikiBentuk rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sirop"/>
+        <untitled-ontology-4:memilikiBentuk rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Tablet"/>
+        <untitled-ontology-4:memilikiBentuk rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Tetes"/>
+        <untitled-ontology-4:memilikiKandunganAktif rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Paracetamol"/>
+        <untitled-ontology-4:Deskripsi>Termorex adalah obat yang bermanfaat untuk menurunkan demam, serta meringankan sakit kepala dan sakit gigi. Varian Termorex juga ada yang dapat membantu meredakan gejala common cold, seperti hidung tersumbat, bersin-bersin, dan batuk. Obat ini diperuntukkan bagi bayi dan anak-anak.
+
+Termorex mengandung paracetamol sebagai bahan aktif utama. Paracetamol diketahui dapat menghalangi sinyal kimia otak yang menimbulkan sakit dan menurunkan suhu tubuh melalui pusat pengaturan suhu tubuh di otak.</untitled-ontology-4:Deskripsi>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Tetes -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Tetes">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Kategori"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Urine_berwarna_gelap -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Urine_berwarna_gelap">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#EfekSamping"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Viadoxin -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Viadoxin">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Merk"/>
+        <untitled-ontology-4:memilikiBentuk rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Kapsul"/>
+        <untitled-ontology-4:memilikiKandunganAktif rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Doxycycline"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Wajah_memerah -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Wajah_memerah">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#EfekSamping"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Wajah_panas -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Wajah_panas">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#EfekSamping"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+
