@@ -1,6 +1,7 @@
 streamlit
 openai
 langchain
+langchain-community
 langchain-openai
 rdflib
 faiss-cpu
