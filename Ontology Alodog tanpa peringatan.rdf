@@ -97,14 +97,6 @@
     
 
 
-    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#EfekSamping -->
-
-    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#EfekSamping">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
-    </owl:DatatypeProperty>
-    
-
-
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -719,7 +711,7 @@ Sanmol mengandung bahan aktif paracetamol yang memiliki efek analgesik dan antip
     <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sirop -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sirop">
-        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Kategori"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#BentukObat"/>
     </owl:NamedIndividual>
     
 
@@ -789,7 +781,7 @@ Termorex mengandung paracetamol sebagai bahan aktif utama. Paracetamol diketahui
     <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Tetes -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Tetes">
-        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Kategori"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#BentukObat"/>
     </owl:NamedIndividual>
     
 
