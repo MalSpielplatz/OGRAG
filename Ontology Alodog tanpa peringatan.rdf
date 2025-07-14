@@ -52,7 +52,7 @@
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#memilikiKategori">
         <rdfs:domain rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Obat"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Kategori"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#KategoriObat"/>
     </owl:ObjectProperty>
     
 
@@ -128,9 +128,9 @@
     
 
 
-    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Kategori -->
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#KategoriObat -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Kategori"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#KategoriObat"/>
     
 
 
@@ -176,7 +176,7 @@
     <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Analgesik -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Analgesik">
-        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Kategori"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#KategoriObat"/>
     </owl:NamedIndividual>
     
 
@@ -190,7 +190,7 @@
     <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Antibiotik -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Antibiotik">
-        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Kategori"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#KategoriObat"/>
     </owl:NamedIndividual>
     
 
@@ -198,7 +198,7 @@
     <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Antibiotik_tetracycline -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Antibiotik_tetracycline">
-        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Kategori"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#KategoriObat"/>
     </owl:NamedIndividual>
     
 
@@ -206,7 +206,7 @@
     <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Antimalaria -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Antimalaria">
-        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Kategori"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#KategoriObat"/>
         <untitled-ontology-4:Deskripsi>Antimalaria adalah kelompok obat untuk mengobati dan mencegah malaria. Malaria adalah penyakit infeksi yang disebabkan oleh parasit Plasmodium dan menular melalui gigitan nyamuk Anopheles.
 
 Antimalaria bekerja dengan cara membunuh parasit yang ada di hati atau sel darah merah. Agar lebih efektif, biasanya penderita malaria akan mengonsumsi lebih dari satu jenis obat antimalaria. Hal ini karena satu obat saja tidak dapat mengatasi parasit secara tuntas.</untitled-ontology-4:Deskripsi>
@@ -217,7 +217,7 @@ Antimalaria bekerja dengan cara membunuh parasit yang ada di hati atau sel darah
     <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Antiparasit -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Antiparasit">
-        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Kategori"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#KategoriObat"/>
     </owl:NamedIndividual>
     
 
@@ -225,7 +225,7 @@ Antimalaria bekerja dengan cara membunuh parasit yang ada di hati atau sel darah
     <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Antipiretik -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Antipiretik">
-        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Kategori"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#KategoriObat"/>
     </owl:NamedIndividual>
     
 
@@ -261,6 +261,7 @@ Antimalaria bekerja dengan cara membunuh parasit yang ada di hati atau sel darah
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Batuk">
         <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#EfekSamping"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Penyakit"/>
+        <untitled-ontology-4:Deskripsi>Batuk adalah respons alami tubuh untuk mengeluarkan benda asing dari dalam saluran pernapasan, seperti debu, kuman, atau virus. Namun, jika terjadi berkepanjangan dan disertai keluhan lain, batuk bisa menjadi gejala gangguan pernapasan, mulai dari asma, tuberkulosis, hingga kanker paru-paru.</untitled-ontology-4:Deskripsi>
     </owl:NamedIndividual>
     
 
@@ -280,6 +281,7 @@ Antimalaria bekerja dengan cara membunuh parasit yang ada di hati atau sel darah
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Demam">
         <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Penyakit"/>
         <untitled-ontology-4:memilikiPengobatan rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Paracetamol"/>
+        <untitled-ontology-4:Deskripsi>Demam adalah meningkatnya suhu tubuh hingga lebih dari 380C. Kondisi ini bisa menandakan adanya penyakit atau kondisi tertentu di dalam tubuh. Demam dapat terjadi pada siapa pun, mulai dari bayi hingga orang dewasa.</untitled-ontology-4:Deskripsi>
     </owl:NamedIndividual>
     
 
@@ -362,6 +364,7 @@ Mencegah terjadinya malaria pada orang yang hendak berpergian atau menetap di da
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Insomnia">
         <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#EfekSamping"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Penyakit"/>
+        <untitled-ontology-4:Deskripsi>Insomnia adalah gangguan tidur yang membuat penderitanya sulit tidur atau sering terbangun saat tidur dan sulit untuk tertidur kembali. Insomnia yang parah bisa menurunkan kualitas hidup sehingga berdampak buruk pada kesehatan dan keselamatan penderitanya.</untitled-ontology-4:Deskripsi>
     </owl:NamedIndividual>
     
 
@@ -389,6 +392,7 @@ Mencegah terjadinya malaria pada orang yang hendak berpergian atau menetap di da
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Keputihan">
         <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#EfekSamping"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Penyakit"/>
+        <untitled-ontology-4:Deskripsi>Keputihan adalah kondisi ketika lendir kental atau cairan bening keluar dari vagina. Keputihan merupakan cara alami tubuh untuk menjaga kebersihan, kelembapan, serta untuk melindungi organ intim wanita dari infeksi.</untitled-ontology-4:Deskripsi>
     </owl:NamedIndividual>
     
 
@@ -552,6 +556,7 @@ Mencegah terjadinya malaria pada orang yang hendak berpergian atau menetap di da
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Penyakit_kuning">
         <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#EfekSamping"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Penyakit"/>
+        <untitled-ontology-4:Deskripsi>Penyakit kuning adalah kondisi ketika kulit dan bagian putih mata (sklera) menguning. Penyakit kuning atau yang dalam istilah medis disebut ikterus merupakan gejala dari suatu penyakit.</untitled-ontology-4:Deskripsi>
     </owl:NamedIndividual>
     
 
@@ -569,6 +574,7 @@ Mencegah terjadinya malaria pada orang yang hendak berpergian atau menetap di da
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Pilek">
         <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#EfekSamping"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Penyakit"/>
+        <untitled-ontology-4:Deskripsi>Pilek adalah kondisi ketika hidung mengeluarkan ingus atau lendir, baik sesekali maupun terus-menerus. Lendir yang keluar dapat terlihat bening, hijau, atau kekuningan. Sedangkan teksturnya bisa encer atau kental, tergantung pada penyebab yang mendasarinya.</untitled-ontology-4:Deskripsi>
     </owl:NamedIndividual>
     
 
@@ -632,6 +638,7 @@ Mencegah terjadinya malaria pada orang yang hendak berpergian atau menetap di da
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Pusing">
         <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#EfekSamping"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Penyakit"/>
+        <untitled-ontology-4:Deskripsi>Pusing adalah sensasi seperti melayang, berputar, kliyengan, atau merasa akan pingsan. Pusing bisa dialami oleh siapa saja dan sensasi yang dirasakan dapat berbeda antara satu orang dengan orang yang lain.</untitled-ontology-4:Deskripsi>
     </owl:NamedIndividual>
     
 
@@ -658,6 +665,7 @@ Mencegah terjadinya malaria pada orang yang hendak berpergian atau menetap di da
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sakit_kepala">
         <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#EfekSamping"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Penyakit"/>
+        <untitled-ontology-4:Deskripsi>Sakit kepala adalah rasa sakit atau nyeri di kepala yang bisa muncul secara bertahap atau mendadak. Nyeri akibat sakit kepala dapat muncul di salah satu sisi kepala, terpusat di titik tertentu, atau menyebar hingga ke seluruh bagian kepala.</untitled-ontology-4:Deskripsi>
     </owl:NamedIndividual>
     
 
@@ -782,6 +790,7 @@ Termorex mengandung paracetamol sebagai bahan aktif utama. Paracetamol diketahui
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Tetes">
         <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#BentukObat"/>
+        <untitled-ontology-4:Deskripsi>Batuk adalah respons alami tubuh untuk mengeluarkan benda asing dari dalam saluran pernapasan, seperti debu, kuman, atau virus. Namun, jika terjadi berkepanjangan dan disertai keluhan lain, batuk bisa menjadi gejala gangguan pernapasan, mulai dari asma, tuberkulosis, hingga kanker paru-paru.</untitled-ontology-4:Deskripsi>
     </owl:NamedIndividual>
     
 
@@ -817,6 +826,20 @@ Termorex mengandung paracetamol sebagai bahan aktif utama. Paracetamol diketahui
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Wajah_panas">
         <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#EfekSamping"/>
     </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#Thing">
+        <rdfs:comment>Informasi diambil dari website Alodokter.com</rdfs:comment>
+    </rdf:Description>
 </rdf:RDF>
 
 
