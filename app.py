@@ -68,18 +68,18 @@ def setup_rag(method, model_name, api_key):
     llm = ChatOpenAI(model=model_name, temperature=0)
 
     prompt_template = """
-    Anda adalah asisten AI yang ahli dalam menjawab pertanyaan tentang data medis dan kesehatan.
-    Gunakan HANYA informasi dari konteks berikut untuk menjawab pertanyaan.
-    Jika informasi tidak ditemukan, katakan 'Informasi tidak ditemukan dalam konteks'.
-
+    Anda adalah asisten AI medis.
+    Jawablah pertanyaan pengguna HANYA dengan informasi dari konteks berikut.
+    
     Konteks:
     {context}
-
+    
     Pertanyaan:
     {question}
-
-    Jawaban:
+    
+    Jika informasi tidak ada di dalam konteks, jawab: "Informasi tidak ditemukan dalam konteks."
     """
+
 
     prompt = PromptTemplate.from_template(prompt_template)
 
