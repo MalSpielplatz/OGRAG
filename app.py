@@ -1,6 +1,7 @@
 import streamlit as st
 import os
 from dotenv import load_dotenv
+
 # BENAR (Cara Import)
 from langchain_community.chat_models import ChatOpenAI
 from langchain_community.embeddings import OpenAIEmbeddings
@@ -9,6 +10,7 @@ from langchain.schema.runnable import RunnablePassthrough
 from langchain.prompts import PromptTemplate
 from langchain.schema.output_parser import StrOutputParser
 from langchain.docstore.document import Document
+from langchain.text_splitter import RecursiveCharacterTextSplitter
 import rdflib
 from collections import defaultdict
 import json
@@ -16,7 +18,7 @@ import json
 # Load environment variables from .env
 load_dotenv()
 
-# Helper Functions
+# Helper Functions untuk Ontology-Grounded RAG (tidak berubah)
 def uri_to_label(uri):
     uri_str = str(uri)
     return uri_str.split('#')[-1] if '#' in uri_str else uri_str.split('/')[-1]
@@ -44,96 +46,123 @@ def hyperedges_to_docs(hyperedges):
     return documents
 
 # Streamlit App
-st.set_page_config(page_title="Peningkatan Akurasi AI dengan RAG", layout="wide")
-
-# --- PERUBAHAN JUDUL & NARASI ---
-# DIUBAH: Judul diubah menjadi lebih positif dan fokus pada peningkatan.
-st.title("🔬 Peningkatan Akurasi AI dengan Ontology-Grounded RAG")
-st.markdown("Studi kasus untuk mengurangi halusinasi dan meningkatkan presisi jawaban AI menggunakan basis pengetahuan terstruktur (Ontologi).")
+st.set_page_config(page_title="Studi Perbandingan RAG", layout="wide")
+st.title("🔬 Studi Perbandingan: Baseline vs. RAG vs. OGRAG")
+st.markdown("""
+Aplikasi ini membandingkan tiga pendekatan dalam menjawab pertanyaan medis:
+1.  **Model Dasar (Tanpa RAG)**: GPT-4o menjawab murni berdasarkan pengetahuannya sendiri.
+2.  **RAG Standar**: GPT-4o dibantu konteks dari file RDF yang dipecah (*chunking*) sebagai teks biasa.
+3.  **Ontology-Grounded RAG (OGRAG)**: GPT-4o dibantu konteks dari pemrosesan struktur ontologi RDF.
+""")
 
 
 # Sidebar Configuration
 st.sidebar.header("⚙️ Konfigurasi")
 
-model_choice = st.sidebar.selectbox("Pilih Model OpenAI:", ["gpt-4o", "gpt-4o-mini"]) # DIUBAH: "Model GPT" -> "Model OpenAI"
+model_choice = st.sidebar.selectbox("Pilih Model OpenAI:", ["gpt-4o", "gpt-4o-mini"])
 
-# DIUBAH: Opsi diubah dari "RAG Biasa" menjadi "RAG Standar" agar lebih netral.
+# DIUBAH: Menambahkan opsi ketiga "Model Dasar (Tanpa RAG)"
 method_choice = st.sidebar.selectbox(
-    "Pilih Metode Retrieval:",
-    ["Ontology-Grounded RAG", "RAG Standar"]
+    "Pilih Metode:",
+    [
+        "Model Dasar (Tanpa RAG)",
+        "RAG Standar",
+        "Ontology-Grounded RAG (OGRAG)"
+    ]
 )
+openai_api_key = st.sidebar.text_input("Masukkan OpenAI API Key Anda", type="password")
 
-openai_api_key = st.sidebar.text_input("Masukkan OpenAI API Key", type="password")
+if 'chain' not in st.session_state:
+    st.session_state['chain'] = None
 
-# Initialize session state
-if 'rag_chain' not in st.session_state:
-    st.session_state['rag_chain'] = None
-
-# Load and Setup RAG
+# DIUBAH: Nama fungsi diubah menjadi lebih umum
 @st.cache_resource
-def setup_rag(method, model_name, api_key):
+def setup_chain(method, model_name, api_key):
     os.environ["OPENAI_API_KEY"] = api_key
-
-    embeddings = OpenAIEmbeddings(model="text-embedding-3-small")
     llm = ChatOpenAI(model=model_name, temperature=0)
 
-    # --- PERUBAHAN PROMPT ---
-    # DIUBAH: Prompt dibuat lebih tegas dan jelas untuk mengontrol output.
-    prompt_template = """
-    Anda adalah asisten AI medis yang cermat dan akurat.
-    Gunakan HANYA informasi dari 'Konteks' di bawah untuk menjawab 'Pertanyaan'.
-    Jangan sekali-kali menggunakan pengetahuan eksternal Anda.
+    # BARU: Logika untuk metode Model Dasar (Tanpa RAG)
+    if method == "Model Dasar (Tanpa RAG)":
+        st.info("Metode: **Model Dasar (Tanpa RAG)**. LLM akan menjawab berdasarkan pengetahuannya sendiri.")
+        prompt_template = "Anda adalah asisten AI medis. Jawab pertanyaan berikut dengan akurat: {question}"
+        prompt = PromptTemplate.from_template(prompt_template)
+        # Chain sederhana tanpa retriever
+        chain = prompt | llm | StrOutputParser()
+        return chain
 
-    Konteks:
-    {context}
+    # Logika untuk dua metode RAG
+    else:
+        # Prompt khusus untuk RAG yang memaksa jawaban dari konteks
+        prompt_template_rag = """
+        Anda adalah asisten AI medis yang cermat dan akurat.
+        Gunakan HANYA informasi dari 'Konteks' di bawah untuk menjawab 'Pertanyaan'.
+        Jangan sekali-kali menggunakan pengetahuan eksternal Anda.
 
-    Pertanyaan:
-    {question}
+        Konteks:
+        {context}
 
-    Aturan Jawaban:
-    1. Jika informasi untuk menjawab pertanyaan ADA di dalam konteks, berikan jawaban langsung berdasarkan informasi tersebut.
-    2. Jika informasi TIDAK ADA di dalam konteks, jawab HANYA dengan kalimat: "Informasi tidak ditemukan dalam basis data."
-    """
+        Pertanyaan:
+        {question}
 
-    prompt = PromptTemplate.from_template(prompt_template)
+        Aturan Jawaban:
+        1. Jika informasi untuk menjawab pertanyaan ADA di dalam konteks, berikan jawaban langsung berdasarkan informasi tersebut.
+        2. Jika informasi TIDAK ADA di dalam konteks, jawab HANYA dengan kalimat: "Informasi tidak ditemukan dalam basis data."
+        """
+        prompt = PromptTemplate.from_template(prompt_template_rag)
+        rdf_path = "Ontology Alodog tanpa peringatan.rdf"
+        embeddings = OpenAIEmbeddings(model="text-embedding-3-small")
 
-    if method == "Ontology-Grounded RAG":
-        rdf_path = "Ontology Alodog tanpa peringatan.rdf"  # sesuaikan dengan path RDF lokal Anda
-        hyperedges = build_hypergraph_from_rdf(rdf_path)
-        documents = hyperedges_to_docs(hyperedges)
-    else:  # RAG Standar dengan contoh data statis
-        # DIUBAH: Deskripsi diubah untuk kejelasan.
-        documents = [Document(page_content="Paracetamol adalah obat untuk meredakan demam dan nyeri ringan. Efek samping yang mungkin terjadi adalah mual atau insomnia.")]
+        if method == "Ontology-Grounded RAG (OGRAG)":
+            st.info("Metode: **Ontology-Grounded RAG**. Data diproses sebagai hypergraph dari RDF.")
+            hyperedges = build_hypergraph_from_rdf(rdf_path)
+            documents = hyperedges_to_docs(hyperedges)
+        else: # RAG Standar
+            st.info("Metode: **RAG Standar**. File RDF dibaca sebagai teks mentah dan dipecah (*chunking*).")
+            with open(rdf_path, 'r', encoding='utf-8') as f:
+                raw_text = f.read()
+            text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=200)
+            documents = [Document(page_content=chunk, metadata={"source": rdf_path}) for chunk in text_splitter.split_text(raw_text)]
 
-    vectorstore = FAISS.from_documents(documents, embeddings)
-    retriever = vectorstore.as_retriever(search_kwargs={'k': 3})
+        vectorstore = FAISS.from_documents(documents, embeddings)
+        retriever = vectorstore.as_retriever(search_kwargs={'k': 5})
 
-    rag_chain = (
-        {"context": retriever, "question": RunnablePassthrough()} |
-        prompt |
-        llm |
-        StrOutputParser()
-    )
-    return rag_chain
+        rag_chain = (
+            {"context": retriever, "question": RunnablePassthrough()} |
+            prompt |
+            llm |
+            StrOutputParser()
+        )
+        return rag_chain
 
-# Button to setup RAG
-if st.sidebar.button("Siapkan Sistem"): # DIUBAH: Teks tombol lebih umum
+# Button to setup system
+if st.sidebar.button("Siapkan Sistem"):
     if openai_api_key:
-        with st.spinner("Menyiapkan sistem..."):
-            st.session_state['rag_chain'] = setup_rag(method_choice, model_choice, openai_api_key)
-        st.sidebar.success("✅ Sistem siap!")
+        with st.spinner(f"Menyiapkan sistem dengan metode **{method_choice}**..."):
+            st.session_state['chain'] = setup_chain(method_choice, model_choice, openai_api_key)
+        if st.session_state['chain']:
+            st.sidebar.success("✅ Sistem siap!")
     else:
         st.sidebar.error("⚠️ Harap isi API key OpenAI!")
 
-# Input Pertanyaan User
+# User Input
 st.header("💬 Tanya AI")
 user_question = st.text_input("Masukkan pertanyaan Anda di sini:")
 
 if st.button("Dapatkan Jawaban"):
-    if st.session_state['rag_chain']:
+    if st.session_state['chain']:
         with st.spinner("Mencari jawaban..."):
-            answer = st.session_state['rag_chain'].invoke(user_question)
+            chain = st.session_state['chain']
+            
+            # DIUBAH: Cara memanggil chain disesuaikan dengan metodenya
+            if method_choice == "Model Dasar (Tanpa RAG)":
+                # Chain dasar memerlukan input berupa dictionary
+                answer = chain.invoke({"question": user_question})
+            else:
+                # Chain RAG bisa menerima input string langsung
+                answer = chain.invoke(user_question)
+
         st.subheader("📌 Jawaban AI:")
+        st.markdown(f"*(Jawaban dihasilkan menggunakan metode: **{method_choice}**)*")
         st.markdown(answer)
     else:
         st.error("⚠️ Silakan siapkan sistem di sidebar terlebih dahulu!")
