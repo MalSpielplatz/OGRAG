@@ -44,24 +44,14 @@ def hyperedges_to_docs(hyperedges):
     return documents
 
 # Streamlit App
-st.set_page_config(page_title="Peningkatan Akurasi AI dengan RAG", layout="wide")
-
-# --- PERUBAHAN JUDUL & NARASI ---
-# DIUBAH: Judul diubah menjadi lebih positif dan fokus pada peningkatan.
-st.title("🔬 Peningkatan Akurasi AI dengan Ontology-Grounded RAG")
-st.markdown("Studi kasus untuk mengurangi halusinasi dan meningkatkan presisi jawaban AI menggunakan basis pengetahuan terstruktur (Ontologi).")
-
+st.set_page_config(page_title="Ontology-Grounded RAG App", layout="wide")
+st.title("🔎 Ontology-Grounded RAG vs. RAG Biasa")
 
 # Sidebar Configuration
 st.sidebar.header("⚙️ Konfigurasi")
 
-model_choice = st.sidebar.selectbox("Pilih Model OpenAI:", ["gpt-4o", "gpt-4o-mini"]) # DIUBAH: "Model GPT" -> "Model OpenAI"
-
-# DIUBAH: Opsi diubah dari "RAG Biasa" menjadi "RAG Standar" agar lebih netral.
-method_choice = st.sidebar.selectbox(
-    "Pilih Metode Retrieval:",
-    ["Ontology-Grounded RAG", "RAG Standar"]
-)
+model_choice = st.sidebar.selectbox("Pilih Model GPT:", ["gpt-4o", "gpt-4o-mini"])
+method_choice = st.sidebar.selectbox("Pilih Metode Retrieval:", ["Ontology-Grounded RAG", "RAG Biasa"])
 
 openai_api_key = st.sidebar.text_input("Masukkan OpenAI API Key", type="password")
 
@@ -77,23 +67,19 @@ def setup_rag(method, model_name, api_key):
     embeddings = OpenAIEmbeddings(model="text-embedding-3-small")
     llm = ChatOpenAI(model=model_name, temperature=0)
 
-    # --- PERUBAHAN PROMPT ---
-    # DIUBAH: Prompt dibuat lebih tegas dan jelas untuk mengontrol output.
     prompt_template = """
-    Anda adalah asisten AI medis yang cermat dan akurat.
-    Gunakan HANYA informasi dari 'Konteks' di bawah untuk menjawab 'Pertanyaan'.
-    Jangan sekali-kali menggunakan pengetahuan eksternal Anda.
-
+    Anda adalah asisten AI medis.
+    Jawablah pertanyaan pengguna HANYA dengan informasi dari konteks berikut.
+    
     Konteks:
     {context}
-
+    
     Pertanyaan:
     {question}
-
-    Aturan Jawaban:
-    1. Jika informasi untuk menjawab pertanyaan ADA di dalam konteks, berikan jawaban langsung berdasarkan informasi tersebut.
-    2. Jika informasi TIDAK ADA di dalam konteks, jawab HANYA dengan kalimat: "Informasi tidak ditemukan dalam basis data."
+    
+    Jika informasi tidak ada di dalam konteks, jawab: "Informasi tidak ditemukan dalam konteks."
     """
+
 
     prompt = PromptTemplate.from_template(prompt_template)
 
@@ -101,9 +87,8 @@ def setup_rag(method, model_name, api_key):
         rdf_path = "Ontology Alodog tanpa peringatan.rdf"  # sesuaikan dengan path RDF lokal Anda
         hyperedges = build_hypergraph_from_rdf(rdf_path)
         documents = hyperedges_to_docs(hyperedges)
-    else:  # RAG Standar dengan contoh data statis
-        # DIUBAH: Deskripsi diubah untuk kejelasan.
-        documents = [Document(page_content="Paracetamol adalah obat untuk meredakan demam dan nyeri ringan. Efek samping yang mungkin terjadi adalah mual atau insomnia.")]
+    else:  # RAG biasa dengan contoh data statis
+        documents = [Document(page_content="Paracetamol untuk Demam, efek samping: Mual, Insomnia.")]
 
     vectorstore = FAISS.from_documents(documents, embeddings)
     retriever = vectorstore.as_retriever(search_kwargs={'k': 3})
@@ -117,7 +102,7 @@ def setup_rag(method, model_name, api_key):
     return rag_chain
 
 # Button to setup RAG
-if st.sidebar.button("Siapkan Sistem"): # DIUBAH: Teks tombol lebih umum
+if st.sidebar.button("Siapkan Sistem RAG"):
     if openai_api_key:
         with st.spinner("Menyiapkan sistem..."):
             st.session_state['rag_chain'] = setup_rag(method_choice, model_choice, openai_api_key)
@@ -126,14 +111,14 @@ if st.sidebar.button("Siapkan Sistem"): # DIUBAH: Teks tombol lebih umum
         st.sidebar.error("⚠️ Harap isi API key OpenAI!")
 
 # Input Pertanyaan User
-st.header("💬 Tanya AI")
-user_question = st.text_input("Masukkan pertanyaan Anda di sini:")
+st.header("🔖 Tanya AI")
+user_question = st.text_input("Masukkan pertanyaan:")
 
 if st.button("Dapatkan Jawaban"):
     if st.session_state['rag_chain']:
         with st.spinner("Mencari jawaban..."):
             answer = st.session_state['rag_chain'].invoke(user_question)
-        st.subheader("📌 Jawaban AI:")
+        st.subheader("📌 Jawaban:")
         st.markdown(answer)
     else:
-        st.error("⚠️ Silakan siapkan sistem di sidebar terlebih dahulu!")
+        st.error("⚠️ Silakan siapkan sistem RAG terlebih dahulu!")
