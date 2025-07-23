@@ -68,6 +68,17 @@
     
 
 
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#mencegahPenyakit -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#mencegahPenyakit">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#obatPenyakit"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Obat"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Penyakit"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#obatPenyakit -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#obatPenyakit">
@@ -258,14 +269,6 @@ Antimalaria bekerja dengan cara membunuh parasit yang ada di hati atau sel darah
     
 
 
-    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Bengkak -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Bengkak">
-        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#EfekSamping"/>
-    </owl:NamedIndividual>
-    
-
-
     <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#D-Artepp -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#D-Artepp">
@@ -336,6 +339,7 @@ Antimalaria bekerja dengan cara membunuh parasit yang ada di hati atau sel darah
         <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sakit_perut"/>
         <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sunburn"/>
         <untitled-ontology-4:memilikiKategori rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Antibiotik_tetracycline"/>
+        <untitled-ontology-4:mencegahPenyakit rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Malaria"/>
         <untitled-ontology-4:obatPenyakit rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Malaria"/>
         <untitled-ontology-4:Deskripsi>Mengatasi berbagai penyakit akibat infeksi bakteri, termasuk mengobati jerawat yang parah
 Mencegah terjadinya malaria pada orang yang hendak berpergian atau menetap di daerah rawan malaria</untitled-ontology-4:Deskripsi>
@@ -347,16 +351,6 @@ Mencegah terjadinya malaria pada orang yang hendak berpergian atau menetap di da
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Feses_berwarna_seperti_tanah_liat">
         <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#EfekSamping"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Flu -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Flu">
-        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Penyakit"/>
-        <untitled-ontology-4:memilikiPengobatan rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Vaksin_influenza"/>
-        <untitled-ontology-4:Deskripsi>Flu atau influenza adalah infeksi virus yang menyerang hidung, tenggorokan, dan paru-paru. Penderita flu dapat mengalami demam, sakit kepala, pilek, hidung tersumbat, serta batuk.</untitled-ontology-4:Deskripsi>
     </owl:NamedIndividual>
     
 
@@ -393,14 +387,6 @@ Mencegah terjadinya malaria pada orang yang hendak berpergian atau menetap di da
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Kapsul">
         <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#BentukObat"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Kemerahan -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Kemerahan">
-        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#EfekSamping"/>
     </owl:NamedIndividual>
     
 
@@ -492,7 +478,6 @@ Mencegah terjadinya malaria pada orang yang hendak berpergian atau menetap di da
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Mual">
         <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#EfekSamping"/>
-        <untitled-ontology-4:Deskripsi>Mual adalah rasa ingin muntah dan tidak nyaman di perut. Meski begitu, mual tidak selalu disertai dengan muntah. Mual umumnya merupakan kondisi yang ringan, tetapi bisa juga disebabkan oleh penyakit serius, seperti batu ginjal.</untitled-ontology-4:Deskripsi>
     </owl:NamedIndividual>
     
 
@@ -505,9 +490,9 @@ Mencegah terjadinya malaria pada orang yang hendak berpergian atau menetap di da
     
 
 
-    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Nyeri_otot -->
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Muntah -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Nyeri_otot">
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Muntah">
         <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#EfekSamping"/>
     </owl:NamedIndividual>
     
@@ -818,23 +803,6 @@ Termorex mengandung paracetamol sebagai bahan aktif utama. Paracetamol diketahui
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Urine_berwarna_gelap">
         <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#EfekSamping"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Vaksin_influenza -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Vaksin_influenza">
-        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Generik"/>
-        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Bengkak"/>
-        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Demam"/>
-        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Kemerahan"/>
-        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Mual"/>
-        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Mudah_lelah"/>
-        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Nyeri_otot"/>
-        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sakit_kepala"/>
-        <untitled-ontology-4:obatPenyakit rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Flu"/>
-        <untitled-ontology-4:Deskripsi>Vaksin influenza merupakan vaksin yang mampu melindungi Anda dari penyakit flu. Vaksin ini sebaiknya diberikan setiap satu tahun sekali. Meski merupakan penyakit ringan, flu nyatanya juga bisa menimbulkan masalah besar bagi sebagian orang.</untitled-ontology-4:Deskripsi>
     </owl:NamedIndividual>
     
 
