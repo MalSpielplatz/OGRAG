@@ -71,7 +71,6 @@
     <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#mencegahPenyakit -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#mencegahPenyakit">
-        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#obatPenyakit"/>
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Obat"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Penyakit"/>
@@ -119,9 +118,118 @@
     
 
 
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Aminoglikosida -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Aminoglikosida">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Antibiotik"/>
+        <rdfs:comment>
+            <rdf:Description>
+                <untitled-ontology-4:Deskripsi>Aminoglikosida adalah jenis antibiotik yang biasa digunakan untuk mengatasi amebiasis, bakteremia, infeksi tulang, brucellosis, kriptosporidiosis, fibrosis kistik, diare, meningitis, tuberkulosis, atau infeksi ginjal. Antibiotik ini juga berguna untuk mencegah endokarditis bakterial.</untitled-ontology-4:Deskripsi>
+            </rdf:Description>
+        </rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Amphenicol -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Amphenicol">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Antibiotik"/>
+        <rdfs:comment>
+            <rdf:Description>
+                <untitled-ontology-4:Deskripsi>Antibiotik golongan amphenicol dapat digunakan untuk berbagai infeksi bakteri, termasuk infeksi pada saluran pencernaan.</untitled-ontology-4:Deskripsi>
+            </rdf:Description>
+        </rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Analgesik-Antipiretik -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Analgesik-Antipiretik">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#KategoriObat"/>
+        <rdfs:comment rdf:nodeID="genid3"/>
+    </owl:Class>
+    <rdf:Description rdf:nodeID="genid3">
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Diare"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Mual"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sakit_perut"/>
+        <untitled-ontology-4:Deskripsi>Analgetik dan antipiretik adalah golongan obat yang berfungsi sebagai penurun demam sekaligus pereda nyeri. Beberapa jenis obat analgetik-antipiretik bisa dibeli bebas di apotek. Meski begitu, penggunaan obat golongan ini tidak boleh sembarangan dan harus sesuai dengan aturan kemasan atau anjuran dokter.</untitled-ontology-4:Deskripsi>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Antibiotik -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Antibiotik">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#KategoriObat"/>
+        <rdfs:comment>
+            <rdf:Description>
+                <untitled-ontology-4:Deskripsi>Antibiotik adalah obat untuk mengatasi atau mencegah infeksi bakteri. Obat ini tidak dapat digunakan untuk mengatasi infeksi akibat virus, seperti flu. Perlu diingat, antibiotik hanya boleh dikonsumsi atas anjuran dari dokter.</untitled-ontology-4:Deskripsi>
+            </rdf:Description>
+        </rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Antijamur -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Antijamur">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#KategoriObat"/>
+        <rdfs:comment>
+            <rdf:Description>
+                <untitled-ontology-4:Deskripsi>Antijamur adalah kelompok obat yang bermanfaat untuk mengatasi infeksi jamur. Obat antijamur atau antifungi ini tersedia dalam berbagai bentuk sediaan, mulai dari tablet, krim, salep, suntik, hingga sampo.</untitled-ontology-4:Deskripsi>
+            </rdf:Description>
+        </rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Antimalaria -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Antimalaria">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#KategoriObat"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Azole -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Azole">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Antijamur"/>
+        <rdfs:comment>
+            <rdf:Description>
+                <untitled-ontology-4:Deskripsi>Obat ini merupakan antijamur berspektrum luas sehingga dapat membunuh berbagai jenis jamur. Antijamur golongan azole bekerja dengan cara merusak membran sel jamur. Jika membran sel jamur rusak, sel tersebut akan mati.</untitled-ontology-4:Deskripsi>
+            </rdf:Description>
+        </rdfs:comment>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#BentukObat -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#BentukObat"/>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Carbapenem -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Carbapenem">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Antibiotik"/>
+        <rdfs:comment>
+            <rdf:Description>
+                <untitled-ontology-4:Deskripsi>Obat antibiotik golongan carbapenem bisa digunakan untuk menangani berbagai penyakit akibat infeksi bakteri. Antibiotik carbapenem biasanya digunakan ketika antibiotik lain sudah tidak ampuh menangani infeksi.</untitled-ontology-4:Deskripsi>
+            </rdf:Description>
+        </rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Echinocandin -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Echinocandin">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Antijamur"/>
+    </owl:Class>
     
 
 
@@ -139,9 +247,43 @@
     
 
 
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Glicopeptide -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Glicopeptide">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Antibiotik"/>
+        <rdfs:comment>
+            <rdf:Description>
+                <untitled-ontology-4:Deskripsi>Glicopeptide adalah jenis antibiotik yang biasa digunakan untuk mengatasi diare yang disebabkan oleh bakteri Clostridium difficile.</untitled-ontology-4:Deskripsi>
+            </rdf:Description>
+        </rdfs:comment>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#KategoriObat -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#KategoriObat"/>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Lincosamide -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Lincosamide">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Antibiotik"/>
+        <rdfs:comment>
+            <rdf:Description>
+                <untitled-ontology-4:Deskripsi>Antibiotik golongan lincosamide digunakan untuk mengobati dan mencegah beberapa kondisi akibat infeksi bakteri.</untitled-ontology-4:Deskripsi>
+            </rdf:Description>
+        </rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Makrolid -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Makrolid">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Antibiotik"/>
+    </owl:Class>
     
 
 
@@ -159,9 +301,77 @@
     
 
 
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Penisilin -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Penisilin">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Antibiotik"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Penyakit -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Penyakit"/>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Polyene -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Polyene">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Antijamur"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Quinolone -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Quinolone">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Antibiotik"/>
+        <rdfs:comment>
+            <rdf:Description>
+                <untitled-ontology-4:Deskripsi>Quinolone digunakan untuk mengatasi anthrax, penyakit pes, infeksi saluran kemih yang berat atau berulang, pneumonia, infeksi kulit dan jaringan lunak, infeksi ginjal, prostatitis, penyakit radang panggul, atau infeksi tulang dan sendi.</untitled-ontology-4:Deskripsi>
+            </rdf:Description>
+        </rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sefalosporin -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sefalosporin">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Antibiotik"/>
+        <rdfs:comment>
+            <rdf:Description>
+                <untitled-ontology-4:Deskripsi>Beberapa kondisi yang dapat diobati menggunakan sefalosporin adalah infeksi tulang, otitis media, infeksi kulit, infeksi saluran pernapasan atas, dan infeksi saluran kemih.</untitled-ontology-4:Deskripsi>
+            </rdf:Description>
+        </rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sulfonamida -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sulfonamida">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Antibiotik"/>
+        <rdfs:comment>
+            <rdf:Description>
+                <untitled-ontology-4:Deskripsi>Antibiotik golongan sulfa bisa digunakan untuk menangani infeksi saluran kemih, bronkitis, meningitis bakterial, pneumonia, serta infeksi mata atau telinga.</untitled-ontology-4:Deskripsi>
+            </rdf:Description>
+        </rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Tetracycline -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Tetracycline">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Antibiotik"/>
+        <rdfs:comment>
+            <rdf:Description>
+                <untitled-ontology-4:Deskripsi>Tetrasiklin digunakan untuk mengobati beberapa kondisi, di antaranya anthrax, periodontitis, infeksi pada mata, dan jerawat atau rosacea yang parah. Tetrasiklin jenis tertentu tidak dapat digunakan pada anak usia di bawah 8 tahun.</untitled-ontology-4:Deskripsi>
+            </rdf:Description>
+        </rdfs:comment>
+    </owl:Class>
     
 
 
@@ -176,59 +386,130 @@
     
 
 
-    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Analgesik -->
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Abbotic -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Analgesik">
-        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#KategoriObat"/>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Abbotic">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Makrolid"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Merk"/>
+        <untitled-ontology-4:memilikiBentuk rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sirop"/>
+        <untitled-ontology-4:memilikiBentuk rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Tablet"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Diare"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Insomnia"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Maag"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Mual"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Perubahan_rasa_di_lidah"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Perut_kembung"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sakit_kepala"/>
+        <untitled-ontology-4:memilikiKandunganAktif rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Clarithomycin"/>
+        <untitled-ontology-4:Deskripsi>Abbotic adalah obat untuk mengobati infeksi bakteri yang menyerang saluran pernapasan dan kulit.</untitled-ontology-4:Deskripsi>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Antasida -->
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Acne_vulgaris -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Antasida"/>
-    
-
-
-    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Antibiotik -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Antibiotik">
-        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#KategoriObat"/>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Acne_vulgaris">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Penyakit"/>
+        <owl:sameAs rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Jerawat"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Antibiotik_tetracycline -->
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Jerawat -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Antibiotik_tetracycline">
-        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#KategoriObat"/>
+    <rdf:Description rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Jerawat"/>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Albiotin -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Albiotin">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Lincosamide"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Merk"/>
+        <untitled-ontology-4:memilikiBentuk rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Kapsul"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Keputihan"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Mual"/>
+        <untitled-ontology-4:memilikiKandunganAktif rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Clindamycin"/>
+        <untitled-ontology-4:obatPenyakit rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Pneumonia"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Antimalaria -->
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Amebiasis -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Antimalaria">
-        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#KategoriObat"/>
-        <untitled-ontology-4:Deskripsi>Antimalaria adalah kelompok obat untuk mengobati dan mencegah malaria. Malaria adalah penyakit infeksi yang disebabkan oleh parasit Plasmodium dan menular melalui gigitan nyamuk Anopheles.
-
-Antimalaria bekerja dengan cara membunuh parasit yang ada di hati atau sel darah merah. Agar lebih efektif, biasanya penderita malaria akan mengonsumsi lebih dari satu jenis obat antimalaria. Hal ini karena satu obat saja tidak dapat mengatasi parasit secara tuntas.</untitled-ontology-4:Deskripsi>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Amebiasis">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Penyakit"/>
+        <untitled-ontology-4:memilikiPengobatan rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Paromomycin"/>
+        <untitled-ontology-4:Deskripsi>Amebiasis adalah infeksi usus yang disebabkan oleh parasit Entamoeba histolytica. Penyakit ini sering ditemukan di negara tropis dan berkembang dengan kondisi sanitasi yang kurang baik, termasuk Indonesia. Meskipun dapat menimbulkan gejala serius, amebiasis bisa diobati dengan tepat.</untitled-ontology-4:Deskripsi>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Antiparasit -->
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Amoxicillin -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Antiparasit">
-        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#KategoriObat"/>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Amoxicillin">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Generik"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Penisilin"/>
+        <untitled-ontology-4:memilikiBentuk rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Kaplet"/>
+        <untitled-ontology-4:memilikiBentuk rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Kapsul"/>
+        <untitled-ontology-4:memilikiBentuk rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sirop"/>
+        <untitled-ontology-4:memilikiBentuk rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Suntik"/>
+        <untitled-ontology-4:memilikiBentuk rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Tablet"/>
+        <untitled-ontology-4:Deskripsi>Amoxicillin adalah obat antibiotik yang digunakan untuk mengatasi berbagai penyakit akibat infeksi bakteri, seperti infeksi telinga, tonsilitis, atau bronkitis. Obat ini hanya boleh digunakan berdasarkan resep dokter.</untitled-ontology-4:Deskripsi>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Antipiretik -->
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Amphotericin_B -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Antipiretik">
-        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#KategoriObat"/>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Amphotericin_B">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Generik"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Polyene"/>
+        <untitled-ontology-4:memilikiBentuk rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Suntik"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Diare"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Hilang_selera_makan"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Mual"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sakit_kepala"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sakit_perut"/>
+        <untitled-ontology-4:obatPenyakit rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Aspergillosis"/>
+        <untitled-ontology-4:obatPenyakit rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Kandidiasis"/>
+        <untitled-ontology-4:obatPenyakit rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Meningitis"/>
+        <untitled-ontology-4:Deskripsi>Amphotericin B adalah obat yang digunakan untuk mengobati infeksi jamur yang serius dan berbahaya.</untitled-ontology-4:Deskripsi>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Ampicillin -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Ampicillin">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Generik"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Penisilin"/>
+        <untitled-ontology-4:memilikiBentuk rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Kaplet"/>
+        <untitled-ontology-4:memilikiBentuk rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Kapsul"/>
+        <untitled-ontology-4:memilikiBentuk rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sirop"/>
+        <untitled-ontology-4:memilikiBentuk rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Suntik"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Diare"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Keputihan"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Lidah_bengkak"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Mual"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Ruam_kulit"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sakit_perut"/>
+        <untitled-ontology-4:Deskripsi>Ampicillin adalah obat antibiotik yang digunakan untuk mengatasi infeksi bakteri pada berbagai bagian tubuh, seperti saluran pernapasan, saluran pencernaan, saluran kemih, kelamin, telinga, dan jantung. Obat ini hanya dapat digunakan dengan resep dokter.</untitled-ontology-4:Deskripsi>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Anidulafungin -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Anidulafungin">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Echinocandin"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Generik"/>
+        <untitled-ontology-4:memilikiBentuk rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Suntik"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Diare"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Insomnia"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Mual"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sakit_kepala"/>
+        <untitled-ontology-4:Deskripsi>Anidulafungin adalah obat untuk mengatasi penyakit akibat infeksi jamur.</untitled-ontology-4:Deskripsi>
     </owl:NamedIndividual>
     
 
@@ -252,9 +533,57 @@ Antimalaria bekerja dengan cara membunuh parasit yang ada di hati atau sel darah
         <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Mual"/>
         <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Pusing"/>
         <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sakit_perut"/>
-        <untitled-ontology-4:memilikiKategori rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Antimalaria"/>
         <untitled-ontology-4:obatPenyakit rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Malaria"/>
         <untitled-ontology-4:Deskripsi>Mengobati malaria berat</untitled-ontology-4:Deskripsi>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Asam_pipemidat -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Asam_pipemidat">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Generik"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Quinolone"/>
+        <untitled-ontology-4:memilikiBentuk rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Kapsul"/>
+        <untitled-ontology-4:memilikiBentuk rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Tablet"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Diare"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Mual"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Perut_kembung"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Pusing"/>
+        <untitled-ontology-4:obatPenyakit rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Infeksi_saluran_kemih"/>
+        <untitled-ontology-4:Deskripsi>Asam pipemidat adalah antibiotik untuk mengobati infeksi bakteri. Obat ini efektif dalam mengatasi berbagai jenis bakteri</untitled-ontology-4:Deskripsi>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Aspergillosis -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Aspergillosis">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Penyakit"/>
+        <untitled-ontology-4:memilikiPengobatan rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Itraconazole"/>
+        <untitled-ontology-4:Deskripsi>Aspergillosis adalah penyakit infeksi yang disebabkan oleh jamur Aspergillus. Penyakit infeksi jamur ini umumnya memengaruhi sistem pernapasan, tetapi juga dapat menyebar ke bagian tubuh lain, seperti kulit, mata, atau otak.</untitled-ontology-4:Deskripsi>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Baquinor -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Baquinor">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Merk"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Quinolone"/>
+        <untitled-ontology-4:memilikiBentuk rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Infus"/>
+        <untitled-ontology-4:memilikiBentuk rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Kaplet"/>
+        <untitled-ontology-4:memilikiBentuk rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Tablet"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Diare"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Insomnia"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Mual"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Pusing"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sakit_kepala"/>
+        <untitled-ontology-4:memilikiKandunganAktif rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Ciprofloxacin"/>
+        <untitled-ontology-4:obatPenyakit rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Infeksi_saluran_kemih"/>
+        <untitled-ontology-4:obatPenyakit rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Infeksi_saluran_pernapasan"/>
+        <untitled-ontology-4:obatPenyakit rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Pneumonia"/>
+        <untitled-ontology-4:Deskripsi>Baquinor adalah obat untuk mengatasi berbagai infeksi bakteri</untitled-ontology-4:Deskripsi>
     </owl:NamedIndividual>
     
 
@@ -265,6 +594,225 @@ Antimalaria bekerja dengan cara membunuh parasit yang ada di hati atau sel darah
         <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#EfekSamping"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Penyakit"/>
         <untitled-ontology-4:Deskripsi>Batuk adalah respons alami tubuh untuk mengeluarkan benda asing dari dalam saluran pernapasan, seperti debu, kuman, atau virus. Namun, jika terjadi berkepanjangan dan disertai keluhan lain, batuk bisa menjadi gejala gangguan pernapasan, mulai dari asma, tuberkulosis, hingga kanker paru-paru.</untitled-ontology-4:Deskripsi>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Bernoflox -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Bernoflox">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Merk"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Quinolone"/>
+        <untitled-ontology-4:memilikiBentuk rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Tablet"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Diare"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Keputihan"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Maag"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Mual"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Mudah_lelah"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sakit_perut"/>
+        <untitled-ontology-4:memilikiKandunganAktif rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Ciprofloxacin"/>
+        <untitled-ontology-4:obatPenyakit rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Infeksi_saluran_kemih"/>
+        <untitled-ontology-4:obatPenyakit rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Infeksi_saluran_pernapasan"/>
+        <untitled-ontology-4:Deskripsi>Bernoflox adalah obat untuk mengatasi berbagai penyakit akibat infeksi bakteri.</untitled-ontology-4:Deskripsi>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Bintamox -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Bintamox">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Merk"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Penisilin"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Diare"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Insomnia"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Mual"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Ruam_kulit"/>
+        <untitled-ontology-4:memilikiKandunganAktif rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Amoxicillin"/>
+        <untitled-ontology-4:Deskripsi>Bintamox adalah antibiotik yang berguna untuk mengatasi berbagai infeksi bakteri. Beberapa infeksi bakteri yang bisa diatasi dengan obat ini adalah infeksi kulit, sinusitis, bronkitis, hingga pneumonia. Bintamox mengandung bahan aktif amoxicillin.</untitled-ontology-4:Deskripsi>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Biogen -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Biogen">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Aminoglikosida"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Merk"/>
+        <untitled-ontology-4:memilikiKandunganAktif rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Gentamicin"/>
+        <untitled-ontology-4:Deskripsi>Biogen adalah obat oles untuk mengatasi infeksi kulit akibat bakteri, seperti impetigo, folikulitis, atau bisul. Obat ini mampu membasmi bakteri penyebab infeksi sekaligus meredakan keluhan yang timbul karena infeksi tersebut.</untitled-ontology-4:Deskripsi>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Blefaritis -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Blefaritis">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Penyakit"/>
+        <untitled-ontology-4:memilikiPengobatan rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Genoint_tetes_mata"/>
+        <untitled-ontology-4:Deskripsi>Blefaritis adalah peradangan di kelopak mata. Kondisi ini dapat menyebabkan kelopak mata bengkak, kemerahan, dan terasa nyeri. Meski begitu, blefaritis umumnya bukanlah kondisi yang serius dan tidak menular.</untitled-ontology-4:Deskripsi>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Broadamox -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Broadamox">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Merk"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Penisilin"/>
+        <untitled-ontology-4:memilikiBentuk rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Kaplet"/>
+        <untitled-ontology-4:memilikiBentuk rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sirop"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Diare"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Insomnia"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Mual"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Pusing"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Ruam_kulit"/>
+        <untitled-ontology-4:memilikiKandunganAktif rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Amoxicillin"/>
+        <untitled-ontology-4:Deskripsi>Broadamox adalah antibiotik untuk mengobati infeksi bakteri di berbagai bagian tubuh. Obat yang memiliki kandungan amoxicillin ini tersedia dalam bentuk kaplet dan sirop kering. Broadamox bisa diperoleh setelah berkonsultasi dengan dokter.</untitled-ontology-4:Deskripsi>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Bronkitis -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Bronkitis">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Penyakit"/>
+        <untitled-ontology-4:memilikiPengobatan rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Clarithomycin"/>
+        <untitled-ontology-4:memilikiPengobatan rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Paracetamol"/>
+        <untitled-ontology-4:Deskripsi>Bronkitis adalah iritasi atau peradangan pada dinding saluran bronkus, yaitu pipa yang menyalurkan udara dari tenggorokan ke paru-paru. Kondisi ini umumnya disebabkan oleh infeksi virus atau iritasi akibat paparan asap rokok dan polusi udara. Bronkitis bisa berlangsung dalam hitungan hari, minggu, bahkan bulan.</untitled-ontology-4:Deskripsi>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Cazetin -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Cazetin">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Merk"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Polyene"/>
+        <untitled-ontology-4:memilikiBentuk rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Tetes"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Diare"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Mual"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sakit_perut"/>
+        <untitled-ontology-4:memilikiKandunganAktif rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Nystatin"/>
+        <untitled-ontology-4:obatPenyakit rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Kandidiasis"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Cefaclor -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Cefaclor">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Generik"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sefalosporin"/>
+        <untitled-ontology-4:memilikiBentuk rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Kapsul"/>
+        <untitled-ontology-4:memilikiBentuk rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sirop"/>
+        <untitled-ontology-4:memilikiBentuk rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Tablet"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Diare"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Keputihan"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Maag"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Mual"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sakit_kepala"/>
+        <untitled-ontology-4:obatPenyakit rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Faringitis"/>
+        <untitled-ontology-4:obatPenyakit rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Pneumonia"/>
+        <untitled-ontology-4:obatPenyakit rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Radang_amandel"/>
+        <untitled-ontology-4:Deskripsi>Cefaclor adalah obat antibiotik untuk mengatasi berbagai penyakit akibat infeksi bakteri, mulai dari radang tenggorokan (faringitis) hingga infeksi saluran kemih. Cefaclor tersedia dalam bentuk tablet, kapsul, dan sirop kering, yang bisa dibeli dengan resep dokter.</untitled-ontology-4:Deskripsi>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Cefadroxil -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Cefadroxil">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Generik"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sefalosporin"/>
+        <untitled-ontology-4:memilikiBentuk rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Kapsul"/>
+        <untitled-ontology-4:memilikiBentuk rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sirop"/>
+        <untitled-ontology-4:memilikiBentuk rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Tetes"/>
+        <untitled-ontology-4:obatPenyakit rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Faringitis"/>
+        <untitled-ontology-4:obatPenyakit rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Tonsilitis"/>
+        <untitled-ontology-4:Deskripsi>Cefadroxil adalah antibiotik untuk mengatasi berbagai infeksi bakteri, misalnya di tenggorokan, amandel, kulit, atau saluran kemih. Selain itu, obat ini juga bisa digunakan untuk mencegah infeksi di lapisan jantung (endokarditis) sebelum operasi gigi atau tindakan medis di saluran pernapasan atas.</untitled-ontology-4:Deskripsi>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Chloramphenicol -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Chloramphenicol">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Amphenicol"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Generik"/>
+        <untitled-ontology-4:memilikiBentuk rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Kapsul"/>
+        <untitled-ontology-4:memilikiBentuk rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Suntik"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Demam"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Diare"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Mual"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sakit_kepala"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sariawan"/>
+        <untitled-ontology-4:obatPenyakit rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Demam"/>
+        <untitled-ontology-4:obatPenyakit rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Meningitis"/>
+        <untitled-ontology-4:Deskripsi>Chloramphenicol atau kloramfenikol adalah antibiotik yang dapat digunakan untuk mengobati infeksi bakteri di berbagai bagian tubuh. Obat ini hanya boleh digunakan dengan resep dokter.</untitled-ontology-4:Deskripsi>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Ciprofloxacin -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Ciprofloxacin">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Merk"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Quinolone"/>
+        <untitled-ontology-4:memilikiBentuk rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Infus"/>
+        <untitled-ontology-4:memilikiBentuk rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Tablet"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Diare"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Insomnia"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Keputihan"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Maag"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Mual"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Pusing"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sakit_kepala"/>
+        <untitled-ontology-4:mencegahPenyakit rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Maag"/>
+        <untitled-ontology-4:obatPenyakit rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Diare"/>
+        <untitled-ontology-4:obatPenyakit rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Infeksi_saluran_pernapasan"/>
+        <untitled-ontology-4:obatPenyakit rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Meningitis"/>
+        <untitled-ontology-4:Deskripsi>Ciprofloxacin adalah antibiotik untuk mengatasi berbagai penyakit akibat infeksi bakteri</untitled-ontology-4:Deskripsi>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Clarithomycin -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Clarithomycin">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Generik"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Makrolid"/>
+        <untitled-ontology-4:memilikiBentuk rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Kaplet"/>
+        <untitled-ontology-4:memilikiBentuk rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sirop"/>
+        <untitled-ontology-4:memilikiBentuk rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Tablet"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Diare"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Mual"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Perubahan_rasa_di_lidah"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sakit_kepala"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sakit_perut"/>
+        <untitled-ontology-4:obatPenyakit rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Faringitis"/>
+        <untitled-ontology-4:obatPenyakit rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sinusitis"/>
+        <untitled-ontology-4:obatPenyakit rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Tonsilitis"/>
+        <untitled-ontology-4:Deskripsi>Clarithromycin adalah obat untuk mengobati infeksi bakteri di berbagai bagian tubuh, seperti saluran pernapasan, kulit, telinga, tenggorokan, dan amandel. Obat ini hanya boleh digunakan dengan resep dokter.
+
+Abbotic mengandung clarithromycin. Bahan aktif ini bekerja dengan cara membunuh bakteri dan menghentikan pertumbuhannya. Dengan demikian, penyakit infeksi bakteri, seperti pneumonia, bronkitis, infeksi telinga, faringitis, sinus, tonsillitis, atau selulitis, bisa teratasi.</untitled-ontology-4:Deskripsi>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Clindamycin -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Clindamycin">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Generik"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Lincosamide"/>
+        <untitled-ontology-4:memilikiBentuk rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Kapsul"/>
+        <untitled-ontology-4:memilikiBentuk rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Krim"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Diare"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Keputihan"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Mual"/>
+        <untitled-ontology-4:obatPenyakit rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Jerawat"/>
+        <untitled-ontology-4:Deskripsi>Clindamycin adalah obat untuk mengatasi berbagai infeksi bakteri.
+
+Clindamycin bekerja dengan cara memperlambat dan menghentikan perkembangbiakan bakteri.</untitled-ontology-4:Deskripsi>
     </owl:NamedIndividual>
     
 
@@ -300,6 +848,7 @@ Antimalaria bekerja dengan cara membunuh parasit yang ada di hati atau sel darah
     <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Dihydroartemisinin-Piperaquine -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Dihydroartemisinin-Piperaquine">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Antimalaria"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Generik"/>
         <untitled-ontology-4:memilikiBentuk rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Tablet"/>
         <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Batuk"/>
@@ -310,7 +859,6 @@ Antimalaria bekerja dengan cara membunuh parasit yang ada di hati atau sel darah
         <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Pilek"/>
         <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Pucat"/>
         <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sakit_kepala"/>
-        <untitled-ontology-4:memilikiKategori rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Antimalaria"/>
         <untitled-ontology-4:obatPenyakit rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Malaria"/>
         <untitled-ontology-4:Deskripsi>Mengobati malaria</untitled-ontology-4:Deskripsi>
     </owl:NamedIndividual>
@@ -321,8 +869,17 @@ Antimalaria bekerja dengan cara membunuh parasit yang ada di hati atau sel darah
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Dohixat">
         <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Merk"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Tetracycline"/>
+        <untitled-ontology-4:memilikiBentuk rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Kapsul"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Diare"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Hilang_selera_makan"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Keputihan"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Mual"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sakit_kepala"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sakit_perut"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sunburn"/>
         <untitled-ontology-4:memilikiKandunganAktif rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Doxycycline"/>
-        <untitled-ontology-4:memilikiKategori rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Kapsul"/>
+        <untitled-ontology-4:obatPenyakit rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sifilis"/>
     </owl:NamedIndividual>
     
 
@@ -331,18 +888,73 @@ Antimalaria bekerja dengan cara membunuh parasit yang ada di hati atau sel darah
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Doxycycline">
         <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Generik"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Tetracycline"/>
         <untitled-ontology-4:memilikiBentuk rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Kapsul"/>
         <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Diare"/>
         <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Hilang_selera_makan"/>
         <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Mual"/>
         <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sakit_perut"/>
         <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sunburn"/>
-        <untitled-ontology-4:memilikiKategori rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Antibiotik"/>
-        <untitled-ontology-4:memilikiKategori rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Antibiotik_tetracycline"/>
         <untitled-ontology-4:mencegahPenyakit rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Malaria"/>
         <untitled-ontology-4:obatPenyakit rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Malaria"/>
         <untitled-ontology-4:Deskripsi>Mengatasi berbagai penyakit akibat infeksi bakteri, termasuk mengobati jerawat yang parah
 Mencegah terjadinya malaria pada orang yang hendak berpergian atau menetap di daerah rawan malaria</untitled-ontology-4:Deskripsi>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Erythromycin -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Erythromycin">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Makrolid"/>
+        <untitled-ontology-4:memilikiBentuk rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Kapsul"/>
+        <untitled-ontology-4:memilikiBentuk rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Krim"/>
+        <untitled-ontology-4:memilikiBentuk rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sirop"/>
+        <untitled-ontology-4:memilikiBentuk rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Tablet"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Diare"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Hilang_selera_makan"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Kram_perut"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Mual"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Perut_kembung"/>
+        <untitled-ontology-4:obatPenyakit rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Amebiasis"/>
+        <untitled-ontology-4:obatPenyakit rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Faringitis"/>
+        <untitled-ontology-4:obatPenyakit rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Jerawat"/>
+        <untitled-ontology-4:obatPenyakit rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sifilis"/>
+        <untitled-ontology-4:Deskripsi>Erythromycin adalah obat untuk mengatasi infeksi bakteri di berbagai bagian tubuh</untitled-ontology-4:Deskripsi>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Faringitis -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Faringitis">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Penyakit"/>
+        <owl:sameAs rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Radang_tenggorokan"/>
+        <untitled-ontology-4:memilikiPengobatan rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Clarithomycin"/>
+        <untitled-ontology-4:memilikiPengobatan rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Paracetamol"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Radang_tenggorokan -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Radang_tenggorokan"/>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Fasiprim -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Fasiprim">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Merk"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sulfonamida"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Diare"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Hilang_selera_makan"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Mual"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sakit_kepala"/>
+        <untitled-ontology-4:memilikiKandunganAktif rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sulfamethoxazole"/>
+        <untitled-ontology-4:obatPenyakit rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Infeksi_saluran_kemih"/>
+        <untitled-ontology-4:obatPenyakit rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Infeksi_saluran_pernapasan"/>
+        <untitled-ontology-4:Deskripsi>Fasiprim adalah obat untuk mengatasi berbagai infeksi bakteri</untitled-ontology-4:Deskripsi>
     </owl:NamedIndividual>
     
 
@@ -355,6 +967,44 @@ Mencegah terjadinya malaria pada orang yang hendak berpergian atau menetap di da
     
 
 
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Folikulitis -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Folikulitis">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Penyakit"/>
+        <untitled-ontology-4:memilikiPengobatan rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Biogen"/>
+        <untitled-ontology-4:Deskripsi>Folikulitis adalah peradangan pada folikel rambut atau tempat rambut tumbuh. Kondisi ini biasanya disebabkan oleh infeksi bakteri atau jamur. Meski sering kali tidak berbahaya, folikulitis bisa memburuk dan menyebabkan rambut hilang secara permanen.</untitled-ontology-4:Deskripsi>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Genoint_tetes_mata -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Genoint_tetes_mata">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Aminoglikosida"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Merk"/>
+        <untitled-ontology-4:memilikiKandunganAktif rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Gentamicin"/>
+        <untitled-ontology-4:Deskripsi>Genoint tetes mata adalah obat untuk mengatasi infeksi bakteri di mata maupun kelopak mata, seperti konjungtivitis bakterial atau blefaritis. Tetes mata merek Genoint mengandung antibiotik gentamicin yang mampu membasmi kuman penyebab infeksi mata. Obat mata ini hanya bisa diperoleh dengan resep dokter.</untitled-ontology-4:Deskripsi>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Gentamicin -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Gentamicin">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Aminoglikosida"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Generik"/>
+        <untitled-ontology-4:memilikiBentuk rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Infus"/>
+        <untitled-ontology-4:memilikiBentuk rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Suntik"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Diare"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Hilang_selera_makan"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Mual"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Mudah_lelah"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Penglihatan_buram"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sakit_perut"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Hilang_selera_makan -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Hilang_selera_makan">
@@ -363,11 +1013,49 @@ Mencegah terjadinya malaria pada orang yang hendak berpergian atau menetap di da
     
 
 
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Histoplasmosis -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Histoplasmosis">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Penyakit"/>
+        <untitled-ontology-4:memilikiPengobatan rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Itraconazole"/>
+        <untitled-ontology-4:Deskripsi>Histoplasmosis adalah penyakit infeksi yang disebabkan oleh spora jamur Histoplasma capsulatum. Seseorang bisa terkena histoplasmosis ketika tidak sengaja menghirup udara yang terkontaminasi spora jamur tersebut. Meski begitu, histoplasmosis tidak menular antarmanusia.</untitled-ontology-4:Deskripsi>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Impetigo -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Impetigo">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Penyakit"/>
+        <untitled-ontology-4:memilikiPengobatan rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Biogen"/>
+        <untitled-ontology-4:Deskripsi>Impetigo adalah infeksi kulit menular yang banyak dialami oleh bayi dan anak-anak. Infeksi ini ditandai dengan kemunculan bercak merah dan lepuhan di kulit, terutama di wajah, tangan, dan kaki.</untitled-ontology-4:Deskripsi>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Infeksi_saluran_kemih -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Infeksi_saluran_kemih">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Penyakit"/>
+        <untitled-ontology-4:memilikiPengobatan rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Librocef"/>
+        <untitled-ontology-4:Deskripsi>Infeksi saluran kemih adalah kondisi ketika organ yang termasuk dalam sistem kemih mengalami infeksi. Organ tersebut bisa meliputi ginjal, saluran kencing, atau kandung kemih. Namun, sebagian besar infeksi saluran kemih terjadi pada saluran kencing dan kandung kemih.</untitled-ontology-4:Deskripsi>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Infeksi_saluran_pernapasan -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Infeksi_saluran_pernapasan">
         <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Penyakit"/>
-        <untitled-ontology-4:memilikiPengobatan rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Penisilin"/>
+        <untitled-ontology-4:Deskripsi>Infeksi saluran pernapasan adalah infeksi yang terjadi di saluran pernapasan, bisa atas atau bawah. Meski biasanya dapat sembuh tanpa perawatan khusus, kondisi ini bisa berbahaya bagi anak-anak, lansia, atau orang dengan daya tahan tubuh yang lemah.</untitled-ontology-4:Deskripsi>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Infus -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Infus">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#BentukObat"/>
     </owl:NamedIndividual>
     
 
@@ -386,8 +1074,53 @@ Mencegah terjadinya malaria pada orang yang hendak berpergian atau menetap di da
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Interdoxin">
         <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Merk"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Tetracycline"/>
         <untitled-ontology-4:memilikiBentuk rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Kapsul"/>
         <untitled-ontology-4:memilikiKandunganAktif rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Doxycycline"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Itraconazole -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Itraconazole">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Azole"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Generik"/>
+        <untitled-ontology-4:memilikiBentuk rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Kapsul"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Diare"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Mual"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Perut_kembung"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Pusing"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sakit_kepala"/>
+        <untitled-ontology-4:Deskripsi>Itraconazole adalah obat untuk mengatasi infeksi jamur di berbagai bagian dan area tubuh. Obat ini juga dapat digunakan untuk mencegah infeksi jamur pada seseorang dengan sistem imun yang lemah</untitled-ontology-4:Deskripsi>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Jerawat -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Jerawat">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Penyakit"/>
+        <untitled-ontology-4:memilikiPengobatan rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Tetracycline_Hcl"/>
+        <untitled-ontology-4:Deskripsi>Jerawat adalah masalah kulit yang terjadi ketika pori-pori kulit, tepatnya folikel rambut, tersumbat oleh kotoran, debu, minyak, atau sel kulit mati. Akibatnya, terjadi peradangan pada pori-pori tersebut dan bisa juga disertai infeksi. Jerawat sering muncul di wajah, leher, punggung, atau dada.</untitled-ontology-4:Deskripsi>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Kandidiasis -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Kandidiasis">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Penyakit"/>
+        <untitled-ontology-4:memilikiPengobatan rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Anidulafungin"/>
+        <untitled-ontology-4:Deskripsi>kandidiasis adalah infeksi jamur yang disebabkan oleh jamur Candida albicans.</untitled-ontology-4:Deskripsi>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Kaplet -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Kaplet">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#BentukObat"/>
     </owl:NamedIndividual>
     
 
@@ -397,12 +1130,6 @@ Mencegah terjadinya malaria pada orang yang hendak berpergian atau menetap di da
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Kapsul">
         <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#BentukObat"/>
     </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Kemoterapi -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Kemoterapi"/>
     
 
 
@@ -424,9 +1151,26 @@ Mencegah terjadinya malaria pada orang yang hendak berpergian atau menetap di da
     
 
 
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Ketoconazole -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Ketoconazole">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Azole"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Generik"/>
+        <untitled-ontology-4:memilikiBentuk rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Tablet"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Diare"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Mual"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Pusing"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sakit_kepala"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sakit_perut"/>
+        <untitled-ontology-4:Deskripsi>Ketoconazole adalah obat untuk mengatasi infeksi jamur yang menyerang organ dalam tubuh atau infeksi jamur sistemik. Ketoconazole hanya digunakan pada infeksi jamur sistemik yang berat atau tidak membaik dengan obat antijamur lain.</untitled-ontology-4:Deskripsi>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Kina -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Kina">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Antimalaria"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Generik"/>
         <untitled-ontology-4:memilikiBentuk rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Suntik"/>
         <untitled-ontology-4:memilikiBentuk rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Tablet"/>
@@ -438,7 +1182,6 @@ Mencegah terjadinya malaria pada orang yang hendak berpergian atau menetap di da
         <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Telinga_berdenging"/>
         <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Wajah_memerah"/>
         <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Wajah_panas"/>
-        <untitled-ontology-4:memilikiKategori rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Antimalaria"/>
         <untitled-ontology-4:Deskripsi>Dapat mengobati malaria</untitled-ontology-4:Deskripsi>
     </owl:NamedIndividual>
     
@@ -447,15 +1190,25 @@ Mencegah terjadinya malaria pada orang yang hendak berpergian atau menetap di da
     <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Klorokuin -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Klorokuin">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Antimalaria"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Generik"/>
         <untitled-ontology-4:memilikiBentuk rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Kapsul"/>
         <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Diare"/>
         <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Kram_perut"/>
         <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Mual"/>
         <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sakit_kepala"/>
-        <untitled-ontology-4:memilikiKategori rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Antimalaria"/>
         <untitled-ontology-4:obatPenyakit rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Malaria"/>
         <untitled-ontology-4:Deskripsi>Mencegah dan mengatasi malaria, mengatasi amebiasis yang menyebar ke liver, rheumatoid arthritis, dan lupus</untitled-ontology-4:Deskripsi>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Konjungtivitis -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Konjungtivitis">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Penyakit"/>
+        <untitled-ontology-4:memilikiPengobatan rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Genoint_tetes_mata"/>
+        <untitled-ontology-4:Deskripsi>Konjungtivitis adalah mata merah akibat peradangan pada selaput yang melapisi permukaan bola mata dan kelopak mata bagian dalam (konjungtiva mata). Selain mata merah, konjungtivitis dapat disertai rasa gatal pada mata dan mata berair.</untitled-ontology-4:Deskripsi>
     </owl:NamedIndividual>
     
 
@@ -464,6 +1217,83 @@ Mencegah terjadinya malaria pada orang yang hendak berpergian atau menetap di da
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Kram_perut">
         <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#EfekSamping"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Krim -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Krim">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#BentukObat"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Librocef -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Librocef">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Merk"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sefalosporin"/>
+        <untitled-ontology-4:memilikiBentuk rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Kapsul"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Diare"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Hilang_selera_makan"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Mual"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sakit_perut"/>
+        <untitled-ontology-4:memilikiKandunganAktif rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Cefadroxil"/>
+        <untitled-ontology-4:obatPenyakit rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Infeksi_saluran_pernapasan"/>
+        <untitled-ontology-4:obatPenyakit rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Radang_tenggorokan"/>
+        <untitled-ontology-4:Deskripsi>Librocef adalah obat yang digunakan untuk mengobati berbagai infeksi akibat bakteri, seperti infeksi saluran kemih, infeksi kulit, radang tenggorokan, dan infeksi saluran pernapasan. Librocef tersedia dalam bentuk kapsul dan hanya boleh digunakan sesuai resep dokter karena termasuk antibiotik resep.</untitled-ontology-4:Deskripsi>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Lidah_bengkak -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Lidah_bengkak">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#EfekSamping"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Lincocin -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Lincocin">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Lincosamide"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Merk"/>
+        <untitled-ontology-4:memilikiBentuk rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Kapsul"/>
+        <untitled-ontology-4:memilikiKandunganAktif rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Lincomycin"/>
+        <untitled-ontology-4:Deskripsi>Lincocin adalah obat untuk mengatasi infeksi bakteri berat pada paru-paru, kulit, tulang, dan sendi.
+
+Obat ini biasanya digunakan pada pasien yang alergi atau tidak bisa mengonsumsi penisilin.</untitled-ontology-4:Deskripsi>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Lincomycin -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Lincomycin">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Generik"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Lincosamide"/>
+        <untitled-ontology-4:memilikiBentuk rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Kapsul"/>
+        <untitled-ontology-4:memilikiBentuk rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sirop"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Diare"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Keputihan"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Pusing"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sakit_kepala"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sakit_perut"/>
+        <untitled-ontology-4:Deskripsi>Lincomycin adalah antibiotik untuk mengatasi infeksi bakteri berat.
+
+Lincomycin bekerja dengan cara menghambat pertumbuhan bakteri atau langsung membunuh bakteri.</untitled-ontology-4:Deskripsi>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Maag -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Maag">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#EfekSamping"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Penyakit"/>
+        <untitled-ontology-4:Deskripsi>Sakit maag adalah rasa tidak nyaman di perut, seperti perut terasa penuh, rasa panas di perut bagian atas, serta perut kembung. Kondisi ini merupakan gejala penyakit di lambung, seperti tukak lambung atau gastritis.</untitled-ontology-4:Deskripsi>
     </owl:NamedIndividual>
     
 
@@ -485,6 +1315,51 @@ Mencegah terjadinya malaria pada orang yang hendak berpergian atau menetap di da
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Memar">
         <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#EfekSamping"/>
+        <untitled-ontology-4:Deskripsi>Memar adalah perubahan warna pada kulit akibat pecahnya pembuluh darah di bawah kulit karena benturan atau trauma.</untitled-ontology-4:Deskripsi>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Meningitis -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Meningitis">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Penyakit"/>
+        <untitled-ontology-4:memilikiPengobatan rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Gentamicin"/>
+        <untitled-ontology-4:Deskripsi>Meningitis adalah peradangan pada meningen, yaitu lapisan pelindung otak dan saraf tulang belakang. Meningitis kadang sulit dikenali, karena penyakit ini memiliki gejala awal yang serupa dengan flu, seperti demam dan sakit kepala.</untitled-ontology-4:Deskripsi>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Meropenem -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Meropenem">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Carbapenem"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Generik"/>
+        <untitled-ontology-4:memilikiBentuk rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Suntik"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Diare"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Insomnia"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Mual"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sakit_kepala"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sakit_perut"/>
+        <untitled-ontology-4:obatPenyakit rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Infeksi_saluran_pernapasan"/>
+        <untitled-ontology-4:obatPenyakit rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Meningitis"/>
+        <untitled-ontology-4:Deskripsi>Meropenem adalah obat antibiotik untuk mengatasi infeksi bakteri yang tergolong berat.</untitled-ontology-4:Deskripsi>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Micafungin -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Micafungin">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Echinocandin"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Generik"/>
+        <untitled-ontology-4:memilikiBentuk rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Suntik"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Diare"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Insomnia"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Mual"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sakit_kepala"/>
+        <untitled-ontology-4:obatPenyakit rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Kandidiasis"/>
+        <untitled-ontology-4:Deskripsi>Micafungin adalah obat yang digunakan untuk mengobati infeksi jamur.</untitled-ontology-4:Deskripsi>
     </owl:NamedIndividual>
     
 
@@ -493,7 +1368,14 @@ Mencegah terjadinya malaria pada orang yang hendak berpergian atau menetap di da
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Mual">
         <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#EfekSamping"/>
+        <owl:sameAs rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Muntah"/>
     </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Muntah -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Muntah"/>
     
 
 
@@ -513,9 +1395,49 @@ Mencegah terjadinya malaria pada orang yang hendak berpergian atau menetap di da
     
 
 
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Nystatin -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Nystatin">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Generik"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Polyene"/>
+        <untitled-ontology-4:memilikiBentuk rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Tablet"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Diare"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Mual"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sakit_perut"/>
+        <untitled-ontology-4:obatPenyakit rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Kandidiasis"/>
+        <untitled-ontology-4:Deskripsi>Nystatin adalah obat yang digunakan untuk mengatasi infeksi jamur, khususnya infeksi jamur Candida.</untitled-ontology-4:Deskripsi>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Oxacillin -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Oxacillin">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Generik"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Penisilin"/>
+        <untitled-ontology-4:memilikiBentuk rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Suntik"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Diare"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Mual"/>
+        <untitled-ontology-4:obatPenyakit rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Pneumonia"/>
+        <untitled-ontology-4:Deskripsi>Oxacillin adalah obat untuk mengatasi infeksi bakteri Staphylococcus yang kebal terhadap antibiotik penicillin G. Infeksi Staphylococcus dapat menyebabkan beragam penyakit, seperti radang paru (pneumonia), infeksi jantung (endokarditis), atau infeksi tulang dan otot (osteomielitis).</untitled-ontology-4:Deskripsi>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Panu -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Panu">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Penyakit"/>
+        <untitled-ontology-4:memilikiPengobatan rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Itraconazole"/>
+        <untitled-ontology-4:Deskripsi>Panu adalah infeksi pada kulit yang disebabkan oleh jamur Malassezia. Kondisi ini ditandai dengan bercak-bercak yang berwarna lebih terang atau gelap dari area kulit di sekitarnya.</untitled-ontology-4:Deskripsi>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Paracetamol -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Paracetamol">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Analgesik-Antipiretik"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Generik"/>
         <untitled-ontology-4:memilikiBentuk rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sirop"/>
         <untitled-ontology-4:memilikiBentuk rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Tablet"/>
@@ -527,10 +1449,24 @@ Mencegah terjadinya malaria pada orang yang hendak berpergian atau menetap di da
         <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Penyakit_kuning"/>
         <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sakit_kepala"/>
         <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Urine_berwarna_gelap"/>
-        <untitled-ontology-4:memilikiKategori rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Analgesik"/>
-        <untitled-ontology-4:memilikiKategori rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Antipiretik"/>
         <untitled-ontology-4:obatPenyakit rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Demam"/>
         <untitled-ontology-4:Deskripsi>Meredakan demam dan nyeri</untitled-ontology-4:Deskripsi>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Paromomycin -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Paromomycin">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Aminoglikosida"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Generik"/>
+        <untitled-ontology-4:memilikiBentuk rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sirop"/>
+        <untitled-ontology-4:memilikiBentuk rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Tablet"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Diare"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Hilang_selera_makan"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Kram_perut"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Mual"/>
+        <untitled-ontology-4:Deskripsi>Paromomycin adalah obat untuk menangani infeksi parasit, seperti amebiasis di saluran pencernaan.</untitled-ontology-4:Deskripsi>
     </owl:NamedIndividual>
     
 
@@ -547,26 +1483,6 @@ Mencegah terjadinya malaria pada orang yang hendak berpergian atau menetap di da
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Penglihatan_buram">
         <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#EfekSamping"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Penisilin -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Penisilin">
-        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Generik"/>
-        <untitled-ontology-4:memilikiBentuk rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Kapsul"/>
-        <untitled-ontology-4:memilikiBentuk rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Suntik"/>
-        <untitled-ontology-4:memilikiBentuk rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Tablet"/>
-        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Diare"/>
-        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Keputihan"/>
-        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Mual"/>
-        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sakit_kepala"/>
-        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sakit_perut"/>
-        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sariawan"/>
-        <untitled-ontology-4:memilikiKategori rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Antibiotik"/>
-        <untitled-ontology-4:obatPenyakit rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Infeksi_saluran_pernapasan"/>
-        <untitled-ontology-4:Deskripsi>Mengatasi infeksi bakteri</untitled-ontology-4:Deskripsi>
     </owl:NamedIndividual>
     
 
@@ -589,6 +1505,14 @@ Mencegah terjadinya malaria pada orang yang hendak berpergian atau menetap di da
     
 
 
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Perut_kembung -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Perut_kembung">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#EfekSamping"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Pilek -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Pilek">
@@ -599,16 +1523,25 @@ Mencegah terjadinya malaria pada orang yang hendak berpergian atau menetap di da
     
 
 
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Pneumonia -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Pneumonia">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Penyakit"/>
+        <untitled-ontology-4:Deskripsi>Pneumonia adalah peradangan paru-paru yang disebabkan oleh infeksi virus, bakteri, atau jamur. Kondisi ini umumnya ditandai dengan batuk berdahak, sesak napas, atau demam. Pneumonia biasanya cepat memburuk bila terjadi pada bayi, anak-anak, lansia, atau orang dengan daya tahan tubuh lemah.</untitled-ontology-4:Deskripsi>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Primaquine -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Primaquine">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Antimalaria"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Generik"/>
         <untitled-ontology-4:memilikiBentuk rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Tablet"/>
         <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Kram_perut"/>
         <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Mual"/>
         <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Pusing"/>
         <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sakit_perut"/>
-        <untitled-ontology-4:memilikiKategori rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Antimalaria"/>
         <untitled-ontology-4:obatPenyakit rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Malaria"/>
         <untitled-ontology-4:Deskripsi>Mencegah dan mengobati malaria</untitled-ontology-4:Deskripsi>
     </owl:NamedIndividual>
@@ -618,6 +1551,7 @@ Mencegah terjadinya malaria pada orang yang hendak berpergian atau menetap di da
     <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Primaquine_Phosphate -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Primaquine_Phosphate">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Antimalaria"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Merk"/>
         <untitled-ontology-4:memilikiBentuk rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Tablet"/>
         <untitled-ontology-4:memilikiKandunganAktif rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Primaquine"/>
@@ -628,6 +1562,7 @@ Mencegah terjadinya malaria pada orang yang hendak berpergian atau menetap di da
     <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Primet -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Primet">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Antimalaria"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Merk"/>
         <untitled-ontology-4:memilikiKandunganAktif rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Pyrimethamine"/>
     </owl:NamedIndividual>
@@ -665,16 +1600,47 @@ Mencegah terjadinya malaria pada orang yang hendak berpergian atau menetap di da
     <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Pyrimethamine -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Pyrimethamine">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Antimalaria"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Generik"/>
         <untitled-ontology-4:memilikiBentuk rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Tablet"/>
         <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Diare"/>
         <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Hilang_selera_makan"/>
         <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Mual"/>
         <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sakit_perut"/>
-        <untitled-ontology-4:memilikiKategori rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Antimalaria"/>
-        <untitled-ontology-4:memilikiKategori rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Antiparasit"/>
         <untitled-ontology-4:obatPenyakit rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Malaria"/>
         <untitled-ontology-4:Deskripsi>Mengobati toksoplasmosis atau mencegah dan mengobati malaria</untitled-ontology-4:Deskripsi>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Radang_amandel -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Radang_amandel">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Penyakit"/>
+        <owl:sameAs rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Tonsilitis"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Tonsilitis -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Tonsilitis"/>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Radang_tenggorokan -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Radang_tenggorokan">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Penyakit"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Ruam_kulit -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Ruam_kulit">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#EfekSamping"/>
+        <untitled-ontology-4:Deskripsi>Ruam kulit adalah perubahan warna, tekstur, atau tampilan pada permukaan kulit.</untitled-ontology-4:Deskripsi>
     </owl:NamedIndividual>
     
 
@@ -702,6 +1668,7 @@ Mencegah terjadinya malaria pada orang yang hendak berpergian atau menetap di da
     <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sanmol -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sanmol">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Analgesik-Antipiretik"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Merk"/>
         <untitled-ontology-4:memilikiBentuk rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sirop"/>
         <untitled-ontology-4:memilikiBentuk rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Tablet"/>
@@ -719,7 +1686,6 @@ Sanmol mengandung bahan aktif paracetamol yang memiliki efek analgesik dan antip
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sariawan">
         <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#EfekSamping"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Penyakit"/>
-        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sariawan"/>
         <untitled-ontology-4:Deskripsi>Sariawan atau stomatitis aphtosa adalah luka atau peradangan di bibir dan di dalam mulut. Luka ini dapat menimbulkan rasa sakit dan tidak nyaman. Meski sering dianggap sepele, sariawan dapat terasa mengganggu saat penderitanya sedang makan, minum, atau bicara.</untitled-ontology-4:Deskripsi>
     </owl:NamedIndividual>
     
@@ -728,9 +1694,39 @@ Sanmol mengandung bahan aktif paracetamol yang memiliki efek analgesik dan antip
     <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Siclidon -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Siclidon">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Antimalaria"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Merk"/>
         <untitled-ontology-4:memilikiBentuk rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Kapsul"/>
         <untitled-ontology-4:memilikiKandunganAktif rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Doxycycline"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sifilis -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sifilis">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Penyakit"/>
+        <untitled-ontology-4:memilikiPengobatan rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Tetracycline_Hcl"/>
+        <untitled-ontology-4:Deskripsi>Raja singa atau sifilis adalah penyakit menular seksual yang disebabkan oleh bakteri. Gejala sifilis diawali dengan munculnya luka yang tidak terasa sakit di area kelamin, mulut, atau dubur.</untitled-ontology-4:Deskripsi>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sindrom_Cushing -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sindrom_Cushing">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Penyakit"/>
+        <untitled-ontology-4:memilikiPengobatan rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Ketoconazole"/>
+        <untitled-ontology-4:Deskripsi>Sindrom Cushing adalah kumpulan gejala yang muncul akibat terlalu tingginya kadar hormon kortisol di dalam tubuh. Keluhan-keluhan tersebut dapat timbul mendadak atau bertahap dan akan memburuk jika tidak segera ditangani.</untitled-ontology-4:Deskripsi>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sinusitis -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sinusitis">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Penyakit"/>
+        <untitled-ontology-4:Deskripsi>Sinusitis adalah peradangan atau pembengkakan pada lapisan sinus. Kondisi ini umumnya ditandai dengan pilek, hidung tersumbat, dan nyeri di area wajah. Sinusitis bisa berlangsung dalam hitungan minggu, bulan, atau bahkan tahun.</untitled-ontology-4:Deskripsi>
     </owl:NamedIndividual>
     
 
@@ -739,6 +1735,43 @@ Sanmol mengandung bahan aktif paracetamol yang memiliki efek analgesik dan antip
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sirop">
         <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#BentukObat"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sulfadiazine -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sulfadiazine">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Generik"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sulfonamida"/>
+        <untitled-ontology-4:memilikiBentuk rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Tablet"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Diare"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Hilang_selera_makan"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Insomnia"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Mual"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Pusing"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sakit_kepala"/>
+        <untitled-ontology-4:Deskripsi>Sulfadiazine adalah obat untuk mengatasi penyakit akibat infeksi bakteri.
+
+Sulfadiazine termasuk dalam antibiotik golongan sulfa (sulfonamide). Obat antibiotik ini bekerja dengan cara menghentikan perkembangbiakan bakteri sehingga infeksi bakteri dapat teratasi.</untitled-ontology-4:Deskripsi>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sulfamethoxazole -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sulfamethoxazole">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Generik"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sulfonamida"/>
+        <untitled-ontology-4:memilikiBentuk rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Kaplet"/>
+        <untitled-ontology-4:memilikiBentuk rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Tablet"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Diare"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Hilang_selera_makan"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Mual"/>
+        <untitled-ontology-4:mencegahPenyakit rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Meningitis"/>
+        <untitled-ontology-4:Deskripsi>Sulfamethoxazole adalah obat antibiotik untuk mengobati berbagai penyakit akibat infeksi bakteri.
+
+Sulfamethoxazole bekerja dengan cara mengganggu proses pembentukan asam dihidrofolat.</untitled-ontology-4:Deskripsi>
     </owl:NamedIndividual>
     
 
@@ -759,6 +1792,24 @@ Seperti luka bakar, tingkat keparahan sunburn juga bervariasi, mulai ringan hing
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Suntik">
         <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#BentukObat"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Super_tetra -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Super_tetra">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Merk"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Tetracycline"/>
+        <untitled-ontology-4:memilikiBentuk rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Kapsul"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Diare"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Keputihan"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Mual"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Pusing"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sakit_kepala"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sunburn"/>
+        <untitled-ontology-4:obatPenyakit rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Jerawat"/>
+        <untitled-ontology-4:Deskripsi>Super Tetra adalah antibiotik yang bermanfaat untuk mengobati berbagai penyakit akibat infeksi bakteri</untitled-ontology-4:Deskripsi>
     </owl:NamedIndividual>
     
 
@@ -793,6 +1844,7 @@ Seperti luka bakar, tingkat keparahan sunburn juga bervariasi, mulai ringan hing
     <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Termorex -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Termorex">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Analgesik-Antipiretik"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Merk"/>
         <untitled-ontology-4:memilikiBentuk rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sirop"/>
         <untitled-ontology-4:memilikiBentuk rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Tablet"/>
@@ -814,10 +1866,78 @@ Termorex mengandung paracetamol sebagai bahan aktif utama. Paracetamol diketahui
     
 
 
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Tetracycline_Hcl -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Tetracycline_Hcl">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Generik"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Tetracycline"/>
+        <untitled-ontology-4:memilikiBentuk rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Kapsul"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Diare"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Hilang_selera_makan"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Keputihan"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Lidah_bengkak"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Mual"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sakit_kepala"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sakit_perut"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sariawan"/>
+        <untitled-ontology-4:Deskripsi>Tetracycline HCl adalah antibiotik untuk mengatasi penyakit akibat infeksi bakteri, seperti pneumonia dan infeksi saluran pencernaan. Selain itu, obat ini juga bisa digunakan untuk mengatasi jerawat dan rosacea.</untitled-ontology-4:Deskripsi>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Tonsilitis -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Tonsilitis">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Penyakit"/>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Urine_berwarna_gelap -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Urine_berwarna_gelap">
         <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#EfekSamping"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Urinter -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Urinter">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Merk"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Quinolone"/>
+        <untitled-ontology-4:memilikiBentuk rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Kapsul"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Mual"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Pusing"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sakit_perut"/>
+        <untitled-ontology-4:obatPenyakit rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Infeksi_saluran_kemih"/>
+        <untitled-ontology-4:Deskripsi>Urinter adalah obat antibiotik untuk mengatasi infeksi bakteri di saluran kemih, termasuk di uretra, kandung kemih, ureter, dan ginjal. Urinter mengandung bahan aktif asam pipemidat. Obat yang tersedia dalam bentuk kapsul ini hanya bisa diperoleh dengan resep dokter.</untitled-ontology-4:Deskripsi>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Urixin -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Urixin">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Merk"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Quinolone"/>
+        <untitled-ontology-4:memilikiBentuk rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Tablet"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Mual"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sakit_perut"/>
+        <untitled-ontology-4:obatPenyakit rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Infeksi_saluran_kemih"/>
+        <untitled-ontology-4:Deskripsi>Urixin adalah obat antibiotik untuk mengatasi infeksi bakteri di saluran kemih. Urixin mengandung asam pipemidat yang ampuh membasmi kuman penyebab infeksi di area tersebut. Obat berbentuk tablet ini hanya boleh digunakan atas persetujuan dokter.</untitled-ontology-4:Deskripsi>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Vancomycin -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Vancomycin">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Generik"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Glicopeptide"/>
+        <untitled-ontology-4:memilikiBentuk rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Suntik"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Pusing"/>
+        <untitled-ontology-4:Deskripsi>Vancomycin adalah antibiotik untuk mengobati infeksi bakteri berat yang tidak dapat diatasi oleh antibiotik lain atau yang terjadi pada pasien dengan alergi terhadap penisilin.</untitled-ontology-4:Deskripsi>
     </owl:NamedIndividual>
     
 
@@ -828,6 +1948,24 @@ Termorex mengandung paracetamol sebagai bahan aktif utama. Paracetamol diketahui
         <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Merk"/>
         <untitled-ontology-4:memilikiBentuk rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Kapsul"/>
         <untitled-ontology-4:memilikiKandunganAktif rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Doxycycline"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Vibramox -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Vibramox">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Merk"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Penisilin"/>
+        <untitled-ontology-4:memilikiBentuk rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sirop"/>
+        <untitled-ontology-4:memilikiBentuk rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Tablet"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Diare"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Insomnia"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Mual"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Perubahan_rasa_di_lidah"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sakit_kepala"/>
+        <untitled-ontology-4:memilikiKandunganAktif rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Amoxicillin"/>
+        <untitled-ontology-4:Deskripsi>Vibramox adalah obat untuk mengatasi berbagai penyakit akibat infeksi bakteri, seperti radang amandel, sinusitis, pneumonia, bronkitis, infeksi saluran kemih, hingga gonore. Obat antibiotik golongan penisilin ini hanya bisa diperoleh setelah berkonsultasi dengan dokter.</untitled-ontology-4:Deskripsi>
     </owl:NamedIndividual>
     
 
@@ -845,6 +1983,23 @@ Termorex mengandung paracetamol sebagai bahan aktif utama. Paracetamol diketahui
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Wajah_panas">
         <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#EfekSamping"/>
     </owl:NamedIndividual>
+    <rdf:Description>
+        <untitled-ontology-4:Deskripsi>Antimalaria adalah kelompok obat untuk mengobati dan mencegah malaria. Malaria adalah penyakit infeksi yang disebabkan oleh parasit Plasmodium dan menular melalui gigitan nyamuk Anopheles.
+
+Antimalaria bekerja dengan cara membunuh parasit yang ada di hati atau sel darah merah. Agar lebih efektif, biasanya penderita malaria akan mengonsumsi lebih dari satu jenis obat antimalaria. Hal ini karena satu obat saja tidak dapat mengatasi parasit secara tuntas.</untitled-ontology-4:Deskripsi>
+    </rdf:Description>
+    <rdf:Description rdf:nodeID="genid15">
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Diare"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Hilang_selera_makan"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Mual"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Perut_kembung"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Pusing"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sakit_perut"/>
+        <untitled-ontology-4:Deskripsi>Antibiotik adalah obat untuk mengatasi atau mencegah infeksi bakteri. Obat ini tidak dapat digunakan untuk mengatasi infeksi akibat virus, seperti flu. Perlu diingat, antibiotik hanya boleh dikonsumsi atas anjuran dari dokter.</untitled-ontology-4:Deskripsi>
+    </rdf:Description>
+    <rdf:Description>
+        <untitled-ontology-4:Deskripsi>Penisilin dapat digunakan untuk mengobati abses gigi, infeksi telinga, infeksi tenggorokan, gonore, infeksi saluran pernapasan, atau infeksi saluran kemih.</untitled-ontology-4:Deskripsi>
+    </rdf:Description>
     
 
 
