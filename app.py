@@ -63,7 +63,7 @@ def load_csv_docs(csv_url):
 
 # --------- Streamlit UI ---------
 st.set_page_config(page_title="Studi Perbandingan RAG", layout="wide")
-st.title("🔬 Studi Perbandingan: Baseline vs. RAG vs. OGRAG")
+st.title("🔬 Pengembangan Chatbot dengan Retrieval Augmented Generation dan Integrasi Ontologi")
 st.markdown("""
 Aplikasi ini membandingkan tiga pendekatan dalam menjawab pertanyaan medis:
 1.  **Model Dasar (Tanpa RAG)**: GPT-4o menjawab murni berdasarkan pengetahuannya sendiri.
