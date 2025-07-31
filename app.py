@@ -67,10 +67,10 @@ st.set_page_config(page_title="Studi Perbandingan RAG", layout="wide")
 st.markdown("""
     <style>
         [data-testid="stSidebar"] {
-            width: 400px !important;
+            width: 310px !important;
         }
         [data-testid="stSidebar"] > div:first-child {
-            width: 400px !important;
+            width: 310px !important;
         }
     </style>
 """, unsafe_allow_html=True)
