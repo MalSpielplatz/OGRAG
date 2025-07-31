@@ -72,6 +72,23 @@ st.markdown("""
         [data-testid="stSidebar"] > div:first-child {
             width: 310px !important;
         }
+
+        /* Atur padding & layout slider */
+    .stSlider {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    /* Angka di bawah slider biar tidak menempel terlalu rapat */
+    .stSlider > div[data-baseweb="slider"] > div {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+
+    /* Ubah warna slider (jika diinginkan) */
+    .stSlider .css-1c9dki1 {
+        background-color: #ff4b4b !important;
+    }
     </style>
 """, unsafe_allow_html=True)
 
