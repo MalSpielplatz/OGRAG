@@ -102,8 +102,8 @@ Aplikasi ini memiliki beberapa model yang bisa digunakan untuk menjawab pertanya
 
 st.sidebar.header("⚙️ Konfigurasi")
 
-model_choice = st.sidebar.selectbox("Pilih Model OpenAI:", ["gpt-4o", "gpt-4o-mini"])
-temperature_value = st.sidebar.slider("Temperature (0 = deterministik, 1 = kreatif)", min_value=0.0, max_value=1.0, value=0.0, step=0.05)
+model_choice = st.sidebar.selectbox(" Pilih Model OpenAI:", ["gpt-4o", "gpt-4o-mini"])
+temperature_value = st.sidebar.slider(" Setting Temperature: (0 = deterministik, 1 = kreatif)", min_value=0.0, max_value=1.0, value=0.0, step=0.05)
 
 method_choice = st.sidebar.selectbox(
     "Pilih Metode:",
