@@ -63,6 +63,18 @@ def load_csv_docs(csv_url):
 
 # --------- Streamlit UI ---------
 st.set_page_config(page_title="Studi Perbandingan RAG", layout="wide")
+# Tambahkan CSS kustom untuk memperlebar sidebar
+st.markdown("""
+    <style>
+        [data-testid="stSidebar"] {
+            width: 400px !important;
+        }
+        [data-testid="stSidebar"] > div:first-child {
+            width: 400px !important;
+        }
+    </style>
+""", unsafe_allow_html=True)
+
 st.title("🔬 Pengembangan Chatbot dengan Retrieval Augmented Generation dan Integrasi Ontologi")
 st.markdown("""
 Aplikasi ini memiliki beberapa model yang bisa digunakan untuk menjawab pertanyaan medis:
