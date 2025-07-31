@@ -74,6 +74,7 @@ Aplikasi ini memiliki beberapa model yang bisa digunakan untuk menjawab pertanya
 st.sidebar.header("⚙️ Konfigurasi")
 
 model_choice = st.sidebar.selectbox("Pilih Model OpenAI:", ["gpt-4o", "gpt-4o-mini"])
+temperature_value = st.sidebar.slider("Temperature (0 = deterministik, 1 = kreatif)", min_value=0.0, max_value=1.0, value=0.0, step=0.05)
 
 method_choice = st.sidebar.selectbox(
     "Pilih Metode:",
@@ -88,17 +89,15 @@ openai_api_key = st.sidebar.text_input("Masukkan OpenAI API Key Anda", type="pas
 if 'chain' not in st.session_state:
     st.session_state['chain'] = None
 
-# ---- Ganti URL CSV di sini ----
-CSV_URL = "punya RAG.csv" # ganti sesuai repo kamu
-RDF_PATH = "Ontology Alodog tanpa peringatan.rdf"  # file lokal, harus ada di server tempat jalankan streamlit
+CSV_URL = "punya RAG.csv"  # Ganti dengan path file CSV kamu
+RDF_PATH = "Ontology Alodog tanpa peringatan.rdf"  # Ganti dengan path file RDF kamu
 
 @st.cache_resource
-def setup_chain(method, model_name, api_key):
+def setup_chain(method, model_name, api_key, temperature):
     os.environ["OPENAI_API_KEY"] = api_key
-    llm = ChatOpenAI(model=model_name, temperature=0)
+    llm = ChatOpenAI(model=model_name, temperature=temperature)
     embeddings = OpenAIEmbeddings(model="text-embedding-3-small")
 
-    # ----- Baseline -----
     if method == "Model Dasar (Tanpa RAG)":
         st.info("Metode: **Model Dasar (Tanpa RAG)**. LLM akan menjawab berdasarkan pengetahuannya sendiri.")
         prompt_template = "Anda adalah asisten AI medis. Jawab pertanyaan berikut dengan akurat: {question}"
@@ -106,7 +105,6 @@ def setup_chain(method, model_name, api_key):
         chain = prompt | llm | StrOutputParser()
         return chain
 
-    # ----- RAG Standar: CSV -----
     elif method == "RAG Standar":
         st.info("Metode: **RAG Standar**. Pengetahuan diambil dari CSV yang terstruktur.")
         documents = load_csv_docs(CSV_URL)
@@ -133,7 +131,6 @@ def setup_chain(method, model_name, api_key):
         )
         return rag_chain
 
-    # ----- OGRAG (RDF) -----
     elif method == "Ontology-Grounded RAG (OGRAG)":
         st.info("Metode: **Ontology-Grounded RAG**. Pengetahuan diambil dari struktur RDF.")
         hyperedges = build_hypergraph_from_rdf(RDF_PATH)
@@ -165,7 +162,7 @@ def setup_chain(method, model_name, api_key):
 if st.sidebar.button("Siapkan Sistem"):
     if openai_api_key:
         with st.spinner(f"Menyiapkan sistem dengan metode **{method_choice}**..."):
-            st.session_state['chain'] = setup_chain(method_choice, model_choice, openai_api_key)
+            st.session_state['chain'] = setup_chain(method_choice, model_choice, openai_api_key, temperature_value)
         if st.session_state['chain']:
             st.sidebar.success("✅ Sistem siap!")
     else:
@@ -185,7 +182,7 @@ if st.button("Dapatkan Jawaban"):
                 answer = chain.invoke(user_question)
 
         st.subheader("📌 Jawaban AI:")
-        st.markdown(f"*(Jawaban dihasilkan menggunakan metode: **{method_choice}**)*")
+        st.markdown(f"*(Jawaban dihasilkan menggunakan metode: **{method_choice}**, temperature: `{temperature_value}`)*")
         st.markdown(answer)
     else:
         st.error("⚠️ Silakan siapkan sistem di sidebar terlebih dahulu!")
