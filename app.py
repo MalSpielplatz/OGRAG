@@ -65,7 +65,7 @@ def load_csv_docs(csv_url):
 st.set_page_config(page_title="Studi Perbandingan RAG", layout="wide")
 st.title("🔬 Pengembangan Chatbot dengan Retrieval Augmented Generation dan Integrasi Ontologi")
 st.markdown("""
-Aplikasi ini membandingkan tiga pendekatan dalam menjawab pertanyaan medis:
+Aplikasi ini memiliki beberapa model yang bisa digunakan untuk menjawab pertanyaan medis:
 1.  **Model Dasar (Tanpa RAG)**: GPT-4o menjawab murni berdasarkan pengetahuannya sendiri.
 2.  **RAG Standar**: GPT-4o dibantu konteks dari CSV yang terstruktur sebagai basis pengetahuan.
 3.  **Ontology-Grounded RAG (OGRAG)**: GPT-4o dibantu konteks dari pemrosesan struktur ontologi RDF.
