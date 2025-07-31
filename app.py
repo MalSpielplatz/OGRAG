@@ -66,14 +66,6 @@ st.set_page_config(page_title="Studi Perbandingan RAG", layout="wide")
 # Tambahkan CSS kustom untuk memperlebar sidebar
 st.markdown("""
     <style>
-
-    /* Paksa teks label di elemen sidebar agar bisa pindah baris */
-    section[data-testid="stSidebar"] label, section[data-testid="stSidebar"] p {
-        white-space: normal !important;
-        overflow-wrap: break-word !important;
-        word-break: break-word !important;
-        max-width: 100% !important;
-    }
         [data-testid="stSidebar"] {
             width: 310px !important;
         }
@@ -111,7 +103,12 @@ Aplikasi ini memiliki beberapa model yang bisa digunakan untuk menjawab pertanya
 st.sidebar.header("⚙️ Konfigurasi")
 
 model_choice = st.sidebar.selectbox(" Pilih Model OpenAI:", ["gpt-4o", "gpt-4o-mini"])
-temperature_value = st.sidebar.slider(" Setting Temperature: (0 = deterministik, 1 = kreatif)", min_value=0.0, max_value=1.0, value=0.0, step=0.05)
+st.sidebar.markdown("**Setting Temperature:**")
+st.sidebar.markdown("_(0 = deterministik, 1 = kreatif)_")
+temperature_value = st.sidebar.slider(
+    "", min_value=0.0, max_value=1.0, value=0.5, step=0.01
+)
+
 
 method_choice = st.sidebar.selectbox(
     "Pilih Metode:",
