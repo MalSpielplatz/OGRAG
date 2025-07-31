@@ -66,6 +66,14 @@ st.set_page_config(page_title="Studi Perbandingan RAG", layout="wide")
 # Tambahkan CSS kustom untuk memperlebar sidebar
 st.markdown("""
     <style>
+
+    /* Paksa teks label di elemen sidebar agar bisa pindah baris */
+    section[data-testid="stSidebar"] label, section[data-testid="stSidebar"] p {
+        white-space: normal !important;
+        overflow-wrap: break-word !important;
+        word-break: break-word !important;
+        max-width: 100% !important;
+    }
         [data-testid="stSidebar"] {
             width: 310px !important;
         }
