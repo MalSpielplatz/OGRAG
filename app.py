@@ -106,13 +106,6 @@ model_choice = st.sidebar.selectbox(" Pilih Model OpenAI:", ["gpt-4o", "gpt-4o-m
 
 temperature_value = st.sidebar.slider("Temperature (0 = deterministik, 1 = kreatif)", min_value=0.0, max_value=1.0, value=0.0, step=0.05)
 
-st.sidebar.markdown(" Setting Temperature:")
-st.sidebar.markdown("(0 = deterministik, 1 = kreatif)")
-temperature_value = st.sidebar.slider(
-    "", min_value=0.0, max_value=1.0, value=0.5, step=0.01
-)
-
-
 method_choice = st.sidebar.selectbox(
     "Pilih Metode:",
     [
