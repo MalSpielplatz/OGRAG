@@ -1119,6 +1119,16 @@ Mencegah terjadinya malaria pada orang yang hendak berpergian atau menetap di da
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Infeksi_saluran_pernapasan">
         <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Penyakit"/>
+        <untitled-ontology-4:memilikiPengobatan rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Abbotic"/>
+        <untitled-ontology-4:memilikiPengobatan rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Ampicillin"/>
+        <untitled-ontology-4:memilikiPengobatan rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Baquinor"/>
+        <untitled-ontology-4:memilikiPengobatan rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Bernoflox"/>
+        <untitled-ontology-4:memilikiPengobatan rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Broadamox"/>
+        <untitled-ontology-4:memilikiPengobatan rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Ciprofloxacin"/>
+        <untitled-ontology-4:memilikiPengobatan rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Fasiprim"/>
+        <untitled-ontology-4:memilikiPengobatan rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Librocef"/>
+        <untitled-ontology-4:memilikiPengobatan rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Lincomycin"/>
+        <untitled-ontology-4:memilikiPengobatan rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Meropenem"/>
         <untitled-ontology-4:Deskripsi>Infeksi saluran pernapasan adalah infeksi yang terjadi di saluran pernapasan, bisa atas atau bawah. Meski biasanya dapat sembuh tanpa perawatan khusus, kondisi ini bisa berbahaya bagi anak-anak, lansia, atau orang dengan daya tahan tubuh yang lemah.</untitled-ontology-4:Deskripsi>
     </owl:NamedIndividual>
     
