@@ -245,7 +245,7 @@ if submit_btn and user_input and openai_api_key:
         else:
             answer = chain.invoke(user_input)
     st.session_state.chat_history.append({'user': user_input, 'ai': answer})
-    st.experimental_rerun()
+    st.rerun()
 elif submit_btn and not openai_api_key:
     st.error("Masukkan API key OpenAI Anda terlebih dahulu.")
 
