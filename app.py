@@ -238,19 +238,19 @@ with st.form("chat_form", clear_on_submit=True):
 
 if submit_btn and user_input and openai_api_key:
     with st.spinner("AI sedang merespons..."):
-# Gabungkan riwayat percakapan ke prompt baru
-MAX_HISTORY = 3   # Misal, hanya 3 percakapan terakhir
-history_context = ""
-for h in st.session_state.chat_history[-MAX_HISTORY:]:
-    history_context += f"User: {h['user']}\nAI: {h['ai']}\n"
-full_prompt = f"Riwayat percakapan:\n{history_context}\nUser: {user_input}\n"
-
-if method_choice == "Model Dasar (Tanpa RAG)":
-    answer = chain.invoke({"question": full_prompt})
-elif method_choice == "Ontology-Grounded RAG (OGRAG)":
-    answer = chain(full_prompt)
-else:
-    answer = chain.invoke(full_prompt)
+    # Gabungkan riwayat percakapan ke prompt baru
+    MAX_HISTORY = 3   # Misal, hanya 3 percakapan terakhir
+    history_context = ""
+    for h in st.session_state.chat_history[-MAX_HISTORY:]:
+        history_context += f"User: {h['user']}\nAI: {h['ai']}\n"
+    full_prompt = f"Riwayat percakapan:\n{history_context}\nUser: {user_input}\n"
+    
+    if method_choice == "Model Dasar (Tanpa RAG)":
+        answer = chain.invoke({"question": full_prompt})
+    elif method_choice == "Ontology-Grounded RAG (OGRAG)":
+        answer = chain(full_prompt)
+    else:
+        answer = chain.invoke(full_prompt)
 
     st.session_state.chat_history.append({'user': user_input, 'ai': answer})
     st.rerun()
