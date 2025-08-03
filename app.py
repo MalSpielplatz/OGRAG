@@ -9,119 +9,73 @@ from langchain.schema.runnable import RunnablePassthrough
 from langchain.prompts import PromptTemplate
 from langchain.schema.output_parser import StrOutputParser
 from langchain.docstore.document import Document
-from langchain.text_splitter import RecursiveCharacterTextSplitter
 import rdflib
 from collections import defaultdict
-import json
 import pandas as pd
-import math
 
 # Load environment variables from .env
 load_dotenv()
 
-# ===================== OGRAG Helper Functions =====================
+# ===================== Helper Hypergraph & Vectorstore =====================
+
 def uri_to_label(uri):
     uri_str = str(uri)
     return uri_str.split('#')[-1] if '#' in uri_str else uri_str.split('/')[-1]
 
-def create_equivalence_map(g):
-    equivalence_map = defaultdict(set)
-    for s, o in g.subject_objects(predicate=rdflib.OWL.sameAs):
-        s_label = uri_to_label(s)
-        o_label = uri_to_label(o)
-        equivalence_map[s_label].add(o_label)
-        equivalence_map[o_label].add(s_label)
-    return dict(equivalence_map)
-
-def calculate_idf(hyperedges):
-    num_documents = len(hyperedges)
-    doc_freq = defaultdict(int)
-    all_terms = set()
-    for edge in hyperedges:
-        edge_terms = set(edge['entities'])
-        for rel, vals in edge['edge_info'].items():
-            edge_terms.add(rel)
-            edge_terms.update(vals)
-        for term in edge_terms:
-            doc_freq[term] += 1
-            all_terms.add(term)
-    idf_scores = {
-        term: math.log(num_documents / (1 + doc_freq.get(term, 0)))
-        for term in all_terms
-    }
-    return idf_scores, all_terms
-
-def build_hyperedges_for_ograg(rdf_path):
+def construct_hypergraph_from_rdf(rdf_path):
     g = rdflib.Graph()
     g.parse(rdf_path, format='xml')
-    equivalence_map = create_equivalence_map(g)
-    hyperedges = []
     subj_map = defaultdict(lambda: defaultdict(list))
     for s, p, o in g:
         s_label = uri_to_label(s)
         p_label = uri_to_label(p)
         o_label = str(o) if isinstance(o, rdflib.Literal) else uri_to_label(o)
         subj_map[s_label][p_label].append(o_label)
-    for subj, rels in subj_map.items():
-        ent_set = set([subj])
-        for plist in rels.values():
-            ent_set.update(plist)
+    hyperedges = []
+    for i, (subj, rels) in enumerate(subj_map.items()):
+        nodes = []
+        for pred, objs in rels.items():
+            for j, obj in enumerate(objs):
+                nodes.append({"node_id": f"{i}-{j}", "text": f"{subj} {pred} {obj}", "parent_subject": subj})
         hyperedges.append({
+            "edge_id": i,
             "subject": subj,
-            "edge_info": dict(rels),
-            "entities": list(ent_set)
+            "relations": dict(rels),
+            "nodes": nodes
         })
-    idf_scores, all_terms_for_match = calculate_idf(hyperedges)
-    return hyperedges, all_terms_for_match, equivalence_map, idf_scores
+    return hyperedges
 
-def user_input_to_hypergraph(query, all_terms):
-    query_lc = query.lower()
-    user_terms = set()
-    for term in all_terms:
-        if term.lower() in query_lc:
-            user_terms.add(term)
-    return user_terms
-
-def expand_query_terms(terms, eq_map):
-    expanded = set(terms)
-    for term in terms:
-        expanded.update(eq_map.get(term, set()))
-    return expanded
-
-def match_hyperedges_tfidf(query, hyperedges, all_terms, eq_map, idf, top_k=3):
-    initial_user_terms = user_input_to_hypergraph(query, all_terms)
-    expanded_user_terms = expand_query_terms(initial_user_terms, eq_map)
-    scored_edges = []
+def create_faiss_index(hyperedges, embedding_model):
+    all_docs = []
     for edge in hyperedges:
-        score = 0
-        edge_content = set(edge['entities'])
-        for rel, vals in edge['edge_info'].items():
-            edge_content.add(rel)
-            edge_content.update(vals)
-        actual_matched_terms = expanded_user_terms.intersection(edge_content)
-        if actual_matched_terms:
-            for term in actual_matched_terms:
-                score += idf.get(term, 0)
-            scored_edges.append((score, actual_matched_terms, edge))
-    scored_edges.sort(key=lambda x: x[0], reverse=True)
-    top_k_edges = [
-        (edge, matched_terms, score)
-        for score, matched_terms, edge in scored_edges
-    ][:top_k]
-    return initial_user_terms, top_k_edges
+        for node in edge['nodes']:
+            doc = Document(
+                page_content=node['text'],
+                metadata={"subject": node['parent_subject']}
+            )
+            all_docs.append(doc)
+    faiss_index = FAISS.from_documents(documents=all_docs, embedding=embedding_model)
+    return faiss_index
 
-def build_context_from_edges(matched_edges):
-    blocks = []
-    for edge, matched_terms, score in matched_edges:
-        block = (
-            f"Subject: {edge['subject']}\n"
-            f"Matched terms: {', '.join(sorted(list(matched_terms)))}\n"
-            f"Entities: {', '.join(edge['entities'])}\n"
-            f"Edge info: {edge['edge_info']}\n"
-        )
-        blocks.append(block)
-    return "\n\n".join(blocks) if blocks else "Tidak ada konteks relevan ditemukan."
+def retrieve_context_from_faiss_with_scores(query, faiss_index, all_hyperedges, top_k=3):
+    retrieved_docs_with_scores = faiss_index.similarity_search_with_score(query, k=top_k)
+    retrieved_docs = [doc for doc, score in retrieved_docs_with_scores]
+    relevant_subjects = list(dict.fromkeys([doc.metadata['subject'] for doc in retrieved_docs]))
+    subject_to_hyperedge = {edge['subject']: edge for edge in all_hyperedges}
+    matched_hyperedges = [subject_to_hyperedge[subj] for subj in relevant_subjects if subj in subject_to_hyperedge]
+    context = build_context_from_hyperedges(matched_hyperedges)
+    return context, retrieved_docs_with_scores
 
+def build_context_from_hyperedges(matched_edges):
+    if not matched_edges: return "Tidak ada konteks relevan yang ditemukan."
+    context_str = ""
+    for edge in matched_edges:
+        context_str += f"Fakta terkait: {edge['subject']}\n"
+        for relation, objects in edge['relations'].items():
+            for obj in objects:
+                context_str += f"- {relation}: {obj}\n"
+        context_str += "\n"
+    return context_str.strip()
 
 # ===================== Helper for RAG (CSV) =====================
 def load_csv_docs(csv_url):
@@ -156,7 +110,7 @@ st.markdown("""
 Aplikasi ini memiliki beberapa model yang bisa digunakan untuk menjawab pertanyaan medis:
 1.  **Model Dasar (Tanpa RAG)**: GPT-4o menjawab murni berdasarkan pengetahuannya sendiri.
 2.  **RAG Standar**: GPT-4o dibantu konteks dari CSV yang terstruktur sebagai basis pengetahuan.
-3.  **Ontology-Grounded RAG (OGRAG)**: GPT-4o dibantu konteks dari pemrosesan struktur ontologi RDF berbasis TF-IDF symbolic.
+3.  **Ontology-Grounded RAG (OGRAG)**: GPT-4o dibantu konteks dari pemrosesan struktur ontologi RDF berbasis vectorstore FAISS.
 """)
 
 st.sidebar.header("⚙️ Konfigurasi")
@@ -184,7 +138,7 @@ RDF_PATH = "Ontology Alodog tanpa peringatan.rdf"  # <- Ganti dengan path file R
 def setup_chain(method, model_name, api_key, temperature):
     os.environ["OPENAI_API_KEY"] = api_key
     llm = ChatOpenAI(model=model_name, temperature=temperature)
-    embeddings = OpenAIEmbeddings(model="text-embedding-3-small")
+    embeddings = OpenAIEmbeddings(model="text-embedding-3-large")  # Pakai yang sama seperti pipeline utama!
 
     if method == "Model Dasar (Tanpa RAG)":
         st.info("Metode: **Model Dasar (Tanpa RAG)**. LLM akan menjawab berdasarkan pengetahuannya sendiri.")
@@ -199,16 +153,16 @@ def setup_chain(method, model_name, api_key, temperature):
         vectorstore = FAISS.from_documents(documents, embeddings)
         retriever = vectorstore.as_retriever(search_kwargs={'k': 3})
         prompt_template_rag = """
-        Anda adalah asisten medis yang hanya boleh menggunakan informasi berikut (konteks) untuk menjawab pertanyaan. Jangan gunakan pengetahuan luar.
+Anda adalah asisten medis yang hanya boleh menggunakan informasi berikut (konteks) untuk menjawab pertanyaan. Jangan gunakan pengetahuan luar.
 
-        Konteks:
-        {context}
+Konteks:
+{context}
 
-        Pertanyaan:
-        {question}
+Pertanyaan:
+{question}
 
-        Jawaban:
-        """
+Jawaban:
+"""
         prompt = PromptTemplate.from_template(prompt_template_rag)
         rag_chain = (
             {"context": retriever, "question": RunnablePassthrough()} |
@@ -219,41 +173,41 @@ def setup_chain(method, model_name, api_key, temperature):
         return rag_chain
 
     elif method == "Ontology-Grounded RAG (OGRAG)":
-        st.info("Metode: **Ontology-Grounded RAG (TF-IDF Hypergraph)**. Pengetahuan diambil dari struktur RDF (query expansion & matching TF-IDF).")
+        st.info("Metode: **Ontology-Grounded RAG (FAISS Hypergraph)**. Pengetahuan diambil dari struktur RDF yang sudah diubah menjadi vectorstore dan hanya digunakan dari hasil retrieval.")
         @st.cache_resource
-        def cache_hypergraph():
-            return build_hyperedges_for_ograg(RDF_PATH)
-        hyperedges, all_terms_for_match, equivalence_map, idf_scores = cache_hypergraph()
-        llm = ChatOpenAI(model=model_name, temperature=temperature)
+        def cache_hypergraph_and_faiss():
+            hyperedges = construct_hypergraph_from_rdf(RDF_PATH)
+            faiss_index = create_faiss_index(hyperedges, embeddings)
+            return hyperedges, faiss_index
+        hyperedges, faiss_index = cache_hypergraph_and_faiss()
         prompt_template_ograg = """
-        Anda adalah asisten AI medis. Jawab hanya menggunakan informasi dari "Konteks" berikut.
-        Jika informasi tidak ada, jawab dengan "Informasi tidak ditemukan."
+Anda adalah asisten AI medis yang akurat. Jawab pertanyaan hanya berdasarkan informasi dari "Konteks" yang disediakan.
+Jika informasi tidak ada dalam konteks, jawab dengan "Informasi tidak ditemukan dalam konteks yang diberikan."
 
-        Konteks:
-        {context}
+Konteks:
+{context}
 
-        Pertanyaan:
-        {question}
+Pertanyaan:
+{question}
 
-        Jawaban:
-        """
+Jawaban:
+"""
         prompt = PromptTemplate.from_template(prompt_template_ograg)
 
-        def chain_ograg_tfidf(user_question):
-            user_hypergraph, top_k_edges = match_hyperedges_tfidf(
-                user_question, hyperedges, all_terms_for_match, equivalence_map, idf_scores, top_k=3
+        def chain_ograg_faiss(user_question):
+            context, retrieved_docs_with_scores = retrieve_context_from_faiss_with_scores(
+                user_question, faiss_index, hyperedges, top_k=3
             )
-            context = build_context_from_edges(top_k_edges)
             prompt_input = prompt.format(context=context, question=user_question)
             answer_obj = llm.invoke(prompt_input)
             answer = answer_obj.content if hasattr(answer_obj, "content") else str(answer_obj)
-            # Uncomment ini jika ingin tampilkan debug info di main UI:
-            # st.write("User Hypergraph:", user_hypergraph)
-            # for idx, (e, m, s) in enumerate(top_k_edges, 1):
-            #     st.write(f"Top-{idx} Subject: {e['subject']}, Score: {s:.2f}, Matched terms: {sorted(list(m))}")
+            # -- (Opsional, debug info) --
+            # st.write("Top contexts:", context)
+            # for i, (doc, score) in enumerate(retrieved_docs_with_scores, 1):
+            #     st.write(f"Top-{i}: Score: {score:.4f}, Content: {doc.page_content}")
             return answer
 
-        return chain_ograg_tfidf
+        return chain_ograg_faiss
 
 # Tombol Siapkan Sistem
 if st.sidebar.button("Siapkan Sistem"):
