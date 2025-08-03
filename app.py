@@ -77,7 +77,6 @@ def build_context_from_hyperedges(matched_edges):
         context_str += "\n"
     return context_str.strip()
 
-# ===================== Helper for RAG (CSV) =====================
 def load_csv_docs(csv_url):
     df = pd.read_csv(csv_url)
     def row_to_doc(row):
@@ -94,61 +93,62 @@ def load_csv_docs(csv_url):
     return documents
 
 # ===================== Streamlit UI =====================
-st.set_page_config(page_title="Studi Perbandingan RAG", layout="wide")
+st.set_page_config(page_title="Chatbot OG-RAG Medis", layout="wide")
 st.markdown("""
-    <style>
-        [data-testid="stSidebar"] { width: 310px !important; }
-        [data-testid="stSidebar"] > div:first-child { width: 310px !important; }
-        .stSlider { padding-top: 10px; padding-bottom: 10px; }
-        .stSlider > div[data-baseweb="slider"] > div { padding-left: 8px; padding-right: 8px; }
-        .stSlider .css-1c9dki1 { background-color: #ff4b4b !important; }
-    </style>
+<style>
+    .chat-container {margin-bottom: 2rem;}
+    .chat-bubble {padding: 0.8rem 1.1rem; border-radius: 18px; margin-bottom: 1.1rem; max-width: 80%;}
+    .chat-user {background-color: #f1f3f8; align-self: flex-end;}
+    .chat-ai {background-color: #e4f3ea; align-self: flex-start;}
+    .chat-meta {font-size: 0.75rem; color: #888; margin-bottom: 0.2rem;}
+    .stTextInput > div > div > input {font-size: 1.2rem;}
+</style>
 """, unsafe_allow_html=True)
 
-st.title("🔬 Pengembangan Chatbot dengan Retrieval Augmented Generation dan Integrasi Ontologi")
-st.markdown("""
-Aplikasi ini memiliki beberapa model yang bisa digunakan untuk menjawab pertanyaan medis:
-1.  **Model Dasar (Tanpa RAG)**: GPT-4o menjawab murni berdasarkan pengetahuannya sendiri.
-2.  **RAG Standar**: GPT-4o dibantu konteks dari CSV yang terstruktur sebagai basis pengetahuan.
-3.  **Ontology-Grounded RAG (OGRAG)**: GPT-4o dibantu konteks dari pemrosesan struktur ontologi RDF berbasis vectorstore FAISS.
-""")
+st.title("💬 Chatbot OG-RAG Medis")
+st.caption("Percakapan akan terekam pada session dan bisa diekspor ke CSV (fitur opsional).")
 
-st.sidebar.header("⚙️ Konfigurasi")
+with st.sidebar:
+    st.header("⚙️ Konfigurasi")
+    model_choice = st.selectbox("Pilih Model OpenAI:", ["gpt-4o", "gpt-4o-mini"])
+    temperature_value = st.slider("Temperature (0 = deterministik, 1 = kreatif)", min_value=0.0, max_value=1.0, value=0.0, step=0.05)
+    method_choice = st.selectbox(
+        "Pilih Metode:",
+        ["Model Dasar (Tanpa RAG)", "RAG Standar", "Ontology-Grounded RAG (OGRAG)"]
+    )
+    openai_api_key = st.text_input("Masukkan OpenAI API Key Anda", type="password")
+    st.markdown("---")
+    st.info("Riwayat chat akan direset jika model/metode diganti.")
 
-model_choice = st.sidebar.selectbox(" Pilih Model OpenAI:", ["gpt-4o", "gpt-4o-mini"])
-temperature_value = st.sidebar.slider("Temperature (0 = deterministik, 1 = kreatif)", min_value=0.0, max_value=1.0, value=0.0, step=0.05)
+# ========== Konstanta path knowledge base ==========
+CSV_URL = "punya RAG.csv"
+RDF_PATH = "Ontology Alodog tanpa peringatan.rdf"
 
-method_choice = st.sidebar.selectbox(
-    "Pilih Metode:",
-    [
-        "Model Dasar (Tanpa RAG)",
-        "RAG Standar",
-        "Ontology-Grounded RAG (OGRAG)"
-    ]
-)
-openai_api_key = st.sidebar.text_input("Masukkan OpenAI API Key Anda", type="password")
+# ========== Inisialisasi Memory ==========
+if 'chat_history' not in st.session_state:
+    st.session_state.chat_history = []
 
-if 'chain' not in st.session_state:
-    st.session_state['chain'] = None
+# ========== RESET MEMORY JIKA PILIHAN BERUBAH ==========
+if 'last_method' not in st.session_state: st.session_state.last_method = method_choice
+if 'last_model' not in st.session_state: st.session_state.last_model = model_choice
 
-CSV_URL = "punya RAG.csv"  # <- Ganti dengan path file CSV kamu
-RDF_PATH = "Ontology Alodog tanpa peringatan.rdf"  # <- Ganti dengan path file RDF kamu
+if (st.session_state.last_method != method_choice) or (st.session_state.last_model != model_choice):
+    st.session_state.chat_history = []
+    st.session_state.last_method = method_choice
+    st.session_state.last_model = model_choice
 
+# ========== Inisialisasi Chain ==========
 @st.cache_resource
 def setup_chain(method, model_name, api_key, temperature):
     os.environ["OPENAI_API_KEY"] = api_key
     llm = ChatOpenAI(model=model_name, temperature=temperature)
-    embeddings = OpenAIEmbeddings(model="text-embedding-3-large")  # Pakai yang sama seperti pipeline utama!
-
+    embeddings = OpenAIEmbeddings(model="text-embedding-3-large")
     if method == "Model Dasar (Tanpa RAG)":
-        st.info("Metode: **Model Dasar (Tanpa RAG)**. LLM akan menjawab berdasarkan pengetahuannya sendiri.")
         prompt_template = "Anda adalah asisten AI medis. Jawab pertanyaan berikut dengan akurat: {question}"
         prompt = PromptTemplate.from_template(prompt_template)
         chain = prompt | llm | StrOutputParser()
         return chain
-
     elif method == "RAG Standar":
-        st.info("Metode: **RAG Standar**. Pengetahuan diambil dari CSV yang terstruktur.")
         documents = load_csv_docs(CSV_URL)
         vectorstore = FAISS.from_documents(documents, embeddings)
         retriever = vectorstore.as_retriever(search_kwargs={'k': 3})
@@ -171,9 +171,7 @@ Jawaban:
             StrOutputParser()
         )
         return rag_chain
-
     elif method == "Ontology-Grounded RAG (OGRAG)":
-        st.info("Metode: **Ontology-Grounded RAG (FAISS Hypergraph)**. Pengetahuan diambil dari struktur RDF yang sudah diubah menjadi vectorstore dan hanya digunakan dari hasil retrieval.")
         @st.cache_resource
         def cache_hypergraph_and_faiss():
             hyperedges = construct_hypergraph_from_rdf(RDF_PATH)
@@ -193,48 +191,65 @@ Pertanyaan:
 Jawaban:
 """
         prompt = PromptTemplate.from_template(prompt_template_ograg)
-
         def chain_ograg_faiss(user_question):
-            context, retrieved_docs_with_scores = retrieve_context_from_faiss_with_scores(
+            context, _ = retrieve_context_from_faiss_with_scores(
                 user_question, faiss_index, hyperedges, top_k=3
             )
             prompt_input = prompt.format(context=context, question=user_question)
             answer_obj = llm.invoke(prompt_input)
             answer = answer_obj.content if hasattr(answer_obj, "content") else str(answer_obj)
-            # -- (Opsional, debug info) --
-            # st.write("Top contexts:", context)
-            # for i, (doc, score) in enumerate(retrieved_docs_with_scores, 1):
-            #     st.write(f"Top-{i}: Score: {score:.4f}, Content: {doc.page_content}")
             return answer
-
         return chain_ograg_faiss
 
-# Tombol Siapkan Sistem
-if st.sidebar.button("Siapkan Sistem"):
-    if openai_api_key:
-        with st.spinner(f"Menyiapkan sistem dengan metode **{method_choice}**..."):
-            st.session_state['chain'] = setup_chain(method_choice, model_choice, openai_api_key, temperature_value)
-        if st.session_state['chain']:
-            st.sidebar.success("✅ Sistem siap!")
-    else:
-        st.sidebar.error("⚠️ Harap isi API key OpenAI!")
+if openai_api_key:
+    with st.spinner(f"Menyiapkan sistem ({method_choice})..."):
+        chain = setup_chain(method_choice, model_choice, openai_api_key, temperature_value)
+    st.success("✅ Sistem siap digunakan!")
+else:
+    st.warning("Masukkan OpenAI API key Anda di sidebar.")
 
-# User Input
-st.header("💬 Tanya AI")
-user_question = st.text_input("Masukkan pertanyaan Anda di sini:")
+# ========== Chatbot UI ==========
+def render_chat_history():
+    for entry in st.session_state.chat_history:
+        user_msg, ai_msg = entry['user'], entry['ai']
+        st.markdown(
+            f'<div class="chat-container">'
+            f'<div class="chat-bubble chat-user"><span class="chat-meta">Anda:</span><br>{user_msg}</div>'
+            f'<div class="chat-bubble chat-ai"><span class="chat-meta">AI:</span><br>{ai_msg}</div>'
+            f'</div>', unsafe_allow_html=True
+        )
 
-if st.button("Dapatkan Jawaban"):
-    if st.session_state['chain']:
-        with st.spinner("Mencari jawaban..."):
-            chain = st.session_state['chain']
-            if method_choice == "Model Dasar (Tanpa RAG)":
-                answer = chain.invoke({"question": user_question})
-            elif method_choice == "Ontology-Grounded RAG (OGRAG)":
-                answer = chain(user_question)
-            else:
-                answer = chain.invoke(user_question)
-        st.subheader("📌 Jawaban AI:")
-        st.markdown(f"*(Jawaban dihasilkan menggunakan metode: **{method_choice}**, temperature: `{temperature_value}`)*")
-        st.markdown(answer)
+st.markdown("---")
+render_chat_history()
+
+# ========== User Input ==========
+with st.form("chat_form", clear_on_submit=True):
+    user_input = st.text_input("Ketik pertanyaan medis Anda...", key="input_text", autocomplete="off")
+    submit_btn = st.form_submit_button("Kirim")
+
+if submit_btn and user_input and openai_api_key:
+    with st.spinner("AI sedang merespons..."):
+        if method_choice == "Model Dasar (Tanpa RAG)":
+            answer = chain.invoke({"question": user_input})
+        elif method_choice == "Ontology-Grounded RAG (OGRAG)":
+            answer = chain(user_input)
+        else:
+            answer = chain.invoke(user_input)
+    st.session_state.chat_history.append({'user': user_input, 'ai': answer})
+    st.experimental_rerun()
+elif submit_btn and not openai_api_key:
+    st.error("Masukkan API key OpenAI Anda terlebih dahulu.")
+
+# ========== (Optional) Export Chat ==========
+with st.expander("📄 Ekspor Riwayat Chat"):
+    if st.session_state.chat_history:
+        df_chat = pd.DataFrame(st.session_state.chat_history)
+        st.download_button(
+            label="Unduh Riwayat Chat ke CSV",
+            data=df_chat.to_csv(index=False), 
+            file_name="riwayat_chatbot_ograg.csv", 
+            mime="text/csv"
+        )
     else:
-        st.error("⚠️ Silakan siapkan sistem di sidebar terlebih dahulu!")
+        st.info("Belum ada percakapan untuk diekspor.")
+
