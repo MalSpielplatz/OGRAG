@@ -26,6 +26,8 @@
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#memilikiBentuk">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Obat"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#BentukObat"/>
     </owl:ObjectProperty>
     
 
@@ -746,6 +748,7 @@
         <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sakit_perut"/>
         <untitled-ontology-4:memilikiKandunganAktif rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Nystatin"/>
         <untitled-ontology-4:obatPenyakit rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Kandidiasis"/>
+        <untitled-ontology-4:Deskripsi>Cazetin adalah obat antijamur berbahan aktif nystatin. Cazetin bermanfaat untuk mengobati infeksi jamur kandidiasis</untitled-ontology-4:Deskripsi>
     </owl:NamedIndividual>
     
 
@@ -1535,6 +1538,29 @@ Lincomycin bekerja dengan cara menghambat pertumbuhan bakteri atau langsung memb
     
 
 
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Panadol -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Panadol">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Analgesik-Antipiretik"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Merk"/>
+        <untitled-ontology-4:memilikiBentuk rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Kaplet"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Diare"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Hilang_selera_makan"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Kulit_gatal-gatal"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Kulit_memerah"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Mudah_lelah"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Pusing"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sakit_kepala"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sakit_perut"/>
+        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Urine_berwarna_gelap"/>
+        <untitled-ontology-4:memilikiKandunganAktif rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Paracetamol"/>
+        <untitled-ontology-4:obatPenyakit rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Batuk"/>
+        <untitled-ontology-4:obatPenyakit rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Demam"/>
+        <untitled-ontology-4:Deskripsi>Panadol adalah obat yang bermanfaat untuk menurunkan demam serta meredakan nyeri, seperti sakit kepala, sakit gigi, atau sakit pada otot.</untitled-ontology-4:Deskripsi>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Panu -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Panu">
@@ -1610,9 +1636,7 @@ Lincomycin bekerja dengan cara menghambat pertumbuhan bakteri atau langsung memb
 
     <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Perubahan_rasa_di_lidah -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Perubahan_rasa_di_lidah">
-        <untitled-ontology-4:memilikiEfekSamping rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Perubahan_rasa_di_lidah"/>
-    </owl:NamedIndividual>
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Perubahan_rasa_di_lidah"/>
     
 
 
@@ -1950,6 +1974,20 @@ Seperti luka bakar, tingkat keparahan sunburn juga bervariasi, mulai ringan hing
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Telinga_berdenging">
         <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#EfekSamping"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Tempra -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Tempra">
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Analgesik-Antipiretik"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Merk"/>
+        <untitled-ontology-4:memilikiBentuk rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Sirop"/>
+        <untitled-ontology-4:memilikiBentuk rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Tetes"/>
+        <untitled-ontology-4:memilikiKandunganAktif rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Paracetamol"/>
+        <untitled-ontology-4:obatPenyakit rdf:resource="http://www.semanticweb.org/cobaa/ontologies/2025/6/untitled-ontology-4#Demam"/>
+        <untitled-ontology-4:Deskripsi>Tempra dipercaya efektif dan cepat menurunkan demam pada anak. Obat ini tersedia dalam dua sediaan, yaitu obat tetes dan sirup.</untitled-ontology-4:Deskripsi>
     </owl:NamedIndividual>
     
 
