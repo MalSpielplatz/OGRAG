@@ -188,7 +188,7 @@ Jawaban:
             return hyperedges, faiss_index
         hyperedges, faiss_index = cache_hypergraph_and_faiss()
         prompt_template_ograg = """
-Anda adalah asisten AI medis yang akurat. Jawab pertanyaan hanya berdasarkan informasi dari "Konteks" yang disediakan.
+Anda adalah asisten AI medis yang akurat. Jawab *hanya* menggunakan fakta dalam "Konteks". Jika tidak ada, jangan tambahkan apapun. Jangan berimprovisasi.
 Jika informasi tidak ada dalam konteks, jawab dengan "Informasi tidak ditemukan dalam konteks yang diberikan."
 
 Konteks:
