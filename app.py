@@ -2,6 +2,7 @@ import streamlit as st
 import os
 from dotenv import load_dotenv
 
+# Langchain & AI-related imports
 from langchain_community.chat_models import ChatOpenAI
 from langchain_community.embeddings import OpenAIEmbeddings
 from langchain.vectorstores import FAISS
@@ -13,15 +14,23 @@ import rdflib
 from collections import defaultdict
 import pandas as pd
 
-# Load .env jika ada
+# =========== Load Environment Variables (.env) ===========
 load_dotenv()
 
-# ==================== Helper OG-RAG ====================
+# ==================== Helper Functions OG-RAG ====================
+
 def uri_to_label(uri):
+    """
+    Mengubah URI RDF menjadi label manusiawi.
+    Contoh: http://example.org#Demam --> Demam
+    """
     uri_str = str(uri)
     return uri_str.split('#')[-1] if '#' in uri_str else uri_str.split('/')[-1]
 
 def construct_hypergraph_from_rdf(rdf_path):
+    """
+    Membaca file RDF, mengubah jadi struktur hypergraph (dict: subjek -> predikat -> [objek]).
+    """
     g = rdflib.Graph()
     g.parse(rdf_path, format='xml')
     subj_map = defaultdict(lambda: defaultdict(list))
@@ -45,6 +54,9 @@ def construct_hypergraph_from_rdf(rdf_path):
     return hyperedges
 
 def create_faiss_index(hyperedges, embedding_model):
+    """
+    Membuat FAISS vector index dari node hypergraph (OG-RAG).
+    """
     all_docs = []
     for edge in hyperedges:
         for node in edge['nodes']:
@@ -57,6 +69,9 @@ def create_faiss_index(hyperedges, embedding_model):
     return faiss_index
 
 def build_context_from_hyperedges(matched_edges):
+    """
+    Mengubah hyperedges hasil pencarian menjadi string konteks untuk LLM.
+    """
     if not matched_edges: return "Tidak ada konteks relevan yang ditemukan."
     context_str = ""
     for edge in matched_edges:
@@ -68,6 +83,9 @@ def build_context_from_hyperedges(matched_edges):
     return context_str.strip()
 
 def retrieve_context_from_faiss_with_scores(query, faiss_index, all_hyperedges, top_k=3):
+    """
+    Pencarian dokumen (node RDF) paling relevan, return konteks & dokumen hasil search.
+    """
     retrieved_docs_with_scores = faiss_index.similarity_search_with_score(query, k=top_k)
     retrieved_docs = [doc for doc, score in retrieved_docs_with_scores]
     relevant_subjects = list(dict.fromkeys([doc.metadata['subject'] for doc in retrieved_docs]))
@@ -77,6 +95,9 @@ def retrieve_context_from_faiss_with_scores(query, faiss_index, all_hyperedges, 
     return context, retrieved_docs_with_scores
 
 def load_csv_docs(csv_url):
+    """
+    Membaca data CSV, setiap baris diubah jadi dokumen untuk RAG Standar.
+    """
     df = pd.read_csv(csv_url)
     def row_to_doc(row):
         chunks = []
@@ -92,6 +113,7 @@ def load_csv_docs(csv_url):
     return documents
 
 # ==================== UI CONFIG & STYLE ====================
+
 st.set_page_config(page_title="Chatbot OG-RAG Medis", layout="wide")
 st.markdown("""
 <style>
@@ -119,44 +141,59 @@ st.markdown("""
 st.title("💬 Chatbot OG-RAG Medis")
 st.caption("Percakapan akan terekam pada session dan bisa diekspor ke CSV (fitur opsional).")
 
+# ==================== SIDEBAR: Konfigurasi ====================
 with st.sidebar:
     st.header("⚙️ Konfigurasi")
+    # Pilihan model LLM
     model_choice = st.selectbox("Pilih Model OpenAI:", ["gpt-4o", "gpt-4o-mini"])
+    # Pilihan temperature (semakin tinggi semakin kreatif)
     temperature_value = st.slider("Temperature (0 = deterministik, 1 = kreatif)", min_value=0.0, max_value=1.0, value=0.0, step=0.05)
+    # Pilihan mode RAG
     method_choice = st.selectbox(
         "Pilih Metode:",
         ["Model Dasar (Tanpa RAG)", "RAG Standar", "Ontology-Grounded RAG (OGRAG)"]
     )
+    # API key
     openai_api_key = st.text_input("Masukkan OpenAI API Key Anda", type="password")
     st.markdown("---")
     st.info("Riwayat chat akan direset jika model/metode diganti.")
 
-# ========== PATH BASE ==========
-CSV_URL = "punya RAG.csv"
-RDF_PATH = "Ontology Alodog tanpa peringatan.rdf"
+# ========== Path File ==========
+CSV_URL = "punya RAG.csv"     # Path CSV data (bisa diubah sesuai kebutuhan)
+RDF_PATH = "Ontology Alodog tanpa peringatan.rdf"   # Path RDF (ontology medis)
 
-# ========== MEMORY ==========
+# ========== Session State (Memory Percakapan) ==========
 if 'chat_history' not in st.session_state:
     st.session_state.chat_history = []
 
 if 'last_method' not in st.session_state: st.session_state.last_method = method_choice
 if 'last_model' not in st.session_state: st.session_state.last_model = model_choice
+# Reset chat history jika user mengganti model atau metode
 if (st.session_state.last_method != method_choice) or (st.session_state.last_model != model_choice):
     st.session_state.chat_history = []
     st.session_state.last_method = method_choice
     st.session_state.last_model = model_choice
 
-# ========== CHAIN SETUP ==========
+# ========== SETUP CHAIN ==========
+
 @st.cache_resource
 def setup_chain(method, model_name, api_key, temperature):
+    """
+    Menyiapkan model, vectorstore, dan chain sesuai pilihan user.
+    Fungsi ini dicache agar tidak setup ulang tiap submit.
+    """
     os.environ["OPENAI_API_KEY"] = api_key
     llm = ChatOpenAI(model=model_name, temperature=temperature)
     embeddings = OpenAIEmbeddings(model="text-embedding-3-large")
+
+    # 1. Model Dasar (LLM-only, tanpa RAG)
     if method == "Model Dasar (Tanpa RAG)":
         prompt_template = "Anda adalah asisten AI medis. Jawab pertanyaan berikut dengan akurat: {question}"
         prompt = PromptTemplate.from_template(prompt_template)
         chain = prompt | llm | StrOutputParser()
         return chain
+
+    # 2. RAG Standar (data dari CSV)
     elif method == "RAG Standar":
         documents = load_csv_docs(CSV_URL)
         vectorstore = FAISS.from_documents(documents, embeddings)
@@ -180,6 +217,8 @@ Jawaban:
             StrOutputParser()
         )
         return rag_chain
+
+    # 3. OG-RAG (Ontology-based, data RDF)
     elif method == "Ontology-Grounded RAG (OGRAG)":
         @st.cache_resource
         def cache_hypergraph_and_faiss():
@@ -210,6 +249,7 @@ Jawaban:
             return answer
         return chain_ograg_faiss
 
+# ========== INISIALISASI MODEL & RAG ==========
 if openai_api_key:
     with st.spinner(f"Menyiapkan sistem ({method_choice})..."):
         chain = setup_chain(method_choice, model_choice, openai_api_key, temperature_value)
@@ -217,8 +257,11 @@ if openai_api_key:
 else:
     st.warning("Masukkan OpenAI API key Anda di sidebar.")
 
-# ========== Chat Bubble UI ==========
+# ========== TAMPILAN CHAT BUBBLE ==========
 def render_chat_history():
+    """
+    Menampilkan riwayat percakapan dalam bentuk bubble UI (user & AI).
+    """
     for entry in st.session_state.chat_history:
         user_msg, ai_msg = entry['user'], entry['ai']
         st.markdown(
@@ -231,20 +274,20 @@ def render_chat_history():
 st.markdown("---")
 render_chat_history()
 
-# ========== User Input ==========
+# ========== FORM INPUT USER ==========
 with st.form("chat_form", clear_on_submit=True):
     user_input = st.text_input("Ketik pertanyaan medis Anda...", key="input_text", autocomplete="off")
     submit_btn = st.form_submit_button("Kirim")
 
 if submit_btn and user_input and openai_api_key:
     with st.spinner("AI sedang merespons..."):
-        # Gabungkan riwayat percakapan ke prompt baru
-        MAX_HISTORY = 3   # Misal, hanya 3 percakapan terakhir
+        MAX_HISTORY = 3   # Maksimal 3 chat terakhir jadi konteks
         history_context = ""
         for h in st.session_state.chat_history[-MAX_HISTORY:]:
             history_context += f"User: {h['user']}\nAI: {h['ai']}\n"
         full_prompt = f"Riwayat percakapan:\n{history_context}\nUser: {user_input}\n"
         
+        # Jawaban model sesuai metode
         if method_choice == "Model Dasar (Tanpa RAG)":
             answer = chain.invoke({"question": full_prompt})
         elif method_choice == "Ontology-Grounded RAG (OGRAG)":
@@ -252,12 +295,13 @@ if submit_btn and user_input and openai_api_key:
         else:
             answer = chain.invoke(full_prompt)
 
+    # Simpan ke riwayat
     st.session_state.chat_history.append({'user': user_input, 'ai': answer})
     st.rerun()
 elif submit_btn and not openai_api_key:
     st.error("Masukkan API key OpenAI Anda terlebih dahulu.")
 
-# ========== Export Chat ==========
+# ========== EXPORT CHAT KE CSV ==========
 with st.expander("📄 Ekspor Riwayat Chat"):
     if st.session_state.chat_history:
         df_chat = pd.DataFrame(st.session_state.chat_history)
