@@ -160,7 +160,7 @@ def setup_chain(method, model_name, api_key, temperature):
     elif method == "RAG Standar":
         documents = load_csv_docs(CSV_URL)
         vectorstore = FAISS.from_documents(documents, embeddings)
-        retriever = vectorstore.as_retriever(search_kwargs={'k': 3})
+        retriever = vectorstore.as_retriever(search_kwargs={'k': 5})
         prompt_template_rag = """
 Anda adalah asisten medis yang hanya boleh menggunakan informasi berikut (konteks) untuk menjawab pertanyaan. Jangan gunakan pengetahuan luar.
 
