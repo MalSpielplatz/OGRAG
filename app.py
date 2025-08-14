@@ -163,7 +163,6 @@ def setup_chain(method, model_name, api_key, temperature):
         retriever = vectorstore.as_retriever(search_kwargs={'k': 5})
         prompt_template_rag = """
 Anda adalah asisten medis yang hanya boleh menggunakan informasi berikut (konteks) untuk menjawab pertanyaan. Jangan gunakan pengetahuan luar.
-Jawab dengan bahasa inggris
 Konteks:
 {context}
 
